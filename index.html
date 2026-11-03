@@ -1,0 +1,387 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover,user-scalable=no">
+<title>Teleprompter Yoriell</title>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Prompter">
+<meta name="theme-color" content="#141219">
+<link rel="apple-touch-icon" href="icon-180.png">
+<link rel="manifest" href="manifest.json">
+<style>
+/* Layout: cámara a pantalla completa; banda de texto arriba (junto a la cámara frontal); controles abajo */
+:root{
+  --ink:#141219; --paper:#f2eff7; --dim:#a9a3b6;
+  --amber:#f5b841; --rec:#e84040; --glass:rgba(16,14,22,.62);
+  --sans:-apple-system,BlinkMacSystemFont,"SF Pro Text","Helvetica Neue",Arial,sans-serif;
+  --st:env(safe-area-inset-top,0px); --sb:env(safe-area-inset-bottom,0px);
+  color-scheme:dark;
+}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html,body{margin:0;height:100%;background:var(--ink);color:var(--paper);font-family:var(--sans);overflow:hidden;overscroll-behavior:none;-webkit-user-select:none;user-select:none}
+[hidden]{display:none!important}
+button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
+button:focus-visible{outline:2px solid var(--amber);outline-offset:2px}
+
+#cam{position:fixed;inset:0;width:100%;height:100%;object-fit:cover;transform:scaleX(-1);background:#000}
+
+/* Banda del prompter */
+#band{position:fixed;left:10px;right:10px;top:calc(var(--st) + 8px);height:var(--bandH,40vh);
+  background:var(--glass);border-radius:22px;overflow:hidden;touch-action:none;
+  -webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px)}
+#scroller{position:absolute;left:0;right:0;top:0;padding:0 20px;will-change:transform}
+#text{font-size:var(--fs,34px);line-height:1.38;font-weight:600;white-space:pre-wrap;word-wrap:break-word;text-align:var(--align,left);letter-spacing:.005em}
+#text .pad{display:block}
+#band::before,#band::after{content:"";position:absolute;left:0;right:0;height:22%;z-index:2;pointer-events:none}
+#band::before{top:0;background:linear-gradient(var(--glass),transparent)}
+#band::after{bottom:0;background:linear-gradient(transparent,rgba(16,14,22,.85))}
+#guide{position:absolute;left:4px;top:var(--guideY,28%);z-index:3;width:0;height:0;border-top:9px solid transparent;border-bottom:9px solid transparent;border-left:12px solid var(--amber);transform:translateY(-50%)}
+#pauseTag{position:absolute;right:12px;bottom:10px;z-index:3;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--amber);font-weight:700}
+
+/* Estado superior */
+#status{position:fixed;left:0;right:0;top:calc(var(--st) + 8px + var(--bandH,40vh) + 10px);display:flex;justify-content:center;pointer-events:none}
+#timer{background:var(--rec);color:#fff;font-weight:700;font-variant-numeric:tabular-nums;padding:5px 12px;border-radius:99px;font-size:15px;display:flex;align-items:center;gap:7px}
+#timer i{width:8px;height:8px;border-radius:50%;background:#fff;animation:blink 1s infinite}
+@keyframes blink{50%{opacity:.25}}
+
+#count{position:fixed;inset:0;display:grid;place-items:center;font-size:140px;font-weight:800;color:#fff;text-shadow:0 4px 30px rgba(0,0,0,.6);pointer-events:none}
+
+/* Barra inferior */
+#bar{position:fixed;left:0;right:0;bottom:0;padding:14px 18px calc(var(--sb) + 16px);display:flex;align-items:center;justify-content:space-between;gap:10px;
+  background:linear-gradient(transparent,rgba(0,0,0,.55))}
+.side{display:flex;gap:8px;flex:1}
+.side.r{justify-content:flex-end}
+.pill{min-width:48px;height:48px;border-radius:24px;background:var(--glass);display:grid;place-items:center;padding:0 12px;font-size:14px;font-weight:600;-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px)}
+.pill svg{width:22px;height:22px}
+#rec{width:78px;height:78px;border-radius:50%;border:4px solid #fff;display:grid;place-items:center;flex:none}
+#rec span{width:58px;height:58px;border-radius:50%;background:var(--rec);transition:all .2s}
+#rec.on span{width:28px;height:28px;border-radius:7px}
+#speedLbl{font-variant-numeric:tabular-nums}
+
+/* Hojas */
+.sheet{position:fixed;inset:0;z-index:20;background:rgba(0,0,0,.5);display:flex;align-items:flex-end}
+.panel{width:100%;max-height:92%;overflow:auto;background:#1d1a24;border-radius:22px 22px 0 0;padding:18px 18px calc(var(--sb) + 20px);display:flex;flex-direction:column;gap:14px;-webkit-user-select:text;user-select:text}
+.panel h2{margin:0;font-size:20px}
+.row{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+.grow{flex:1;min-width:0}
+textarea,input[type=text]{width:100%;background:#0f0d14;color:var(--paper);border:1px solid #3a3446;border-radius:14px;padding:12px;font:16px/1.45 var(--sans)}
+textarea{min-height:42vh;resize:vertical}
+.btn{height:46px;border-radius:14px;padding:0 18px;background:#2c2836;font-weight:600}
+.btn.main{background:var(--amber);color:#1a1405}
+.btn.danger{color:#ff7b7b}
+.list{display:flex;flex-direction:column;gap:6px}
+.item{display:flex;align-items:center;gap:8px;background:#26222f;border-radius:12px;padding:10px 12px}
+.item.sel{outline:2px solid var(--amber)}
+.item b{flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-weight:600}
+.item small{color:var(--dim)}
+label.set{display:flex;flex-direction:column;gap:6px;font-size:14px;color:var(--dim)}
+input[type=range]{width:100%;accent-color:var(--amber)}
+.seg{display:flex;background:#0f0d14;border-radius:12px;padding:3px}
+.seg button{flex:1;height:38px;border-radius:9px;font-size:14px;color:var(--dim)}
+.seg button.on{background:#2c2836;color:var(--paper)}
+video.preview{width:100%;max-height:55vh;border-radius:16px;background:#000;object-fit:contain}
+.note{font-size:13px;color:var(--dim);line-height:1.45;margin:0}
+
+#err{position:fixed;inset:0;z-index:30;display:grid;place-items:center;padding:24px;background:var(--ink);text-align:center}
+#err div{max-width:340px;display:flex;flex-direction:column;gap:14px;align-items:center}
+@media (prefers-reduced-motion:reduce){#timer i{animation:none}}
+</style>
+</head>
+<body>
+
+<video id="cam" playsinline autoplay muted></video>
+
+<div id="band" aria-label="Texto del guion">
+  <div id="guide"></div>
+  <div id="scroller"><div id="text"></div></div>
+  <div id="pauseTag" hidden>Pausa · toca para seguir</div>
+</div>
+
+<div id="status"><div id="timer" hidden><i></i><span id="time">00:00</span></div></div>
+<div id="count" hidden></div>
+
+<div id="bar">
+  <div class="side">
+    <button class="pill" id="bScripts" aria-label="Guiones">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 6h14M5 11h14M5 16h9"/></svg>
+    </button>
+    <button class="pill" id="bPractice" aria-label="Ensayar sin grabar">Ensayar</button>
+  </div>
+  <button id="rec" aria-label="Grabar"><span></span></button>
+  <div class="side r">
+    <button class="pill" id="bSlower" aria-label="Más lento">−</button>
+    <button class="pill" id="bSettings" aria-label="Ajustes"><span id="speedLbl">Vel 4</span></button>
+    <button class="pill" id="bFaster" aria-label="Más rápido">+</button>
+  </div>
+</div>
+
+<!-- Guiones -->
+<div class="sheet" id="sScripts" hidden>
+  <div class="panel">
+    <div class="row"><h2 class="grow">Guiones</h2><button class="btn" id="bNew">Nuevo</button></div>
+    <div class="list" id="list"></div>
+    <input type="text" id="title" placeholder="Título del guion">
+    <textarea id="editor" placeholder="Escribe o pega aquí lo que vas a decir…"></textarea>
+    <div class="row">
+      <button class="btn danger" id="bDelete">Borrar</button>
+      <span class="grow"></span>
+      <button class="btn main" id="bUse">Usar este guion</button>
+    </div>
+  </div>
+</div>
+
+<!-- Ajustes -->
+<div class="sheet" id="sSettings" hidden>
+  <div class="panel">
+    <h2>Ajustes</h2>
+    <label class="set">Velocidad: <span id="vSpeed"></span><input type="range" id="rSpeed" min="1" max="15" step="1"></label>
+    <label class="set">Tamaño de letra: <span id="vFs"></span><input type="range" id="rFs" min="22" max="64" step="2"></label>
+    <label class="set">Alto de la zona de texto: <span id="vBand"></span><input type="range" id="rBand" min="25" max="70" step="5"></label>
+    <div class="set" style="display:flex;flex-direction:column;gap:6px;font-size:14px;color:var(--dim)">Alineación
+      <div class="seg" id="segAlign"><button data-v="left">Izquierda</button><button data-v="center">Centro</button></div>
+    </div>
+    <div class="set" style="display:flex;flex-direction:column;gap:6px;font-size:14px;color:var(--dim)">Cuenta atrás antes de grabar
+      <div class="seg" id="segCount"><button data-v="0">No</button><button data-v="3">3 s</button><button data-v="5">5 s</button></div>
+    </div>
+    <div class="set" style="display:flex;flex-direction:column;gap:6px;font-size:14px;color:var(--dim)">Calidad
+      <div class="seg" id="segQ"><button data-v="1080">1080p</button><button data-v="2160">4K</button></div>
+    </div>
+    <p class="note">Toca el texto para pausarlo. Arrástralo con el dedo para adelantar o retroceder. El texto no sale en el vídeo.</p>
+    <button class="btn main" id="bCloseSet">Listo</button>
+  </div>
+</div>
+
+<!-- Resultado -->
+<div class="sheet" id="sResult" hidden>
+  <div class="panel">
+    <h2>Toma grabada</h2>
+    <video class="preview" id="preview" playsinline controls></video>
+    <p class="note" id="info"></p>
+    <button class="btn main" id="bSave">Guardar en Fotos</button>
+    <div class="row">
+      <button class="btn danger grow" id="bDiscard">Descartar</button>
+      <button class="btn grow" id="bAgain">Repetir toma</button>
+    </div>
+    <p class="note">En el menú que se abre, elige «Guardar vídeo».</p>
+  </div>
+</div>
+
+<div id="err" hidden><div>
+  <h2 style="margin:0">No puedo abrir la cámara</h2>
+  <p class="note" id="errMsg"></p>
+  <button class="btn main" id="bRetry">Intentar de nuevo</button>
+</div></div>
+
+<script>
+const $=id=>document.getElementById(id);
+const store={get(k,d){try{const v=localStorage.getItem('tp_'+k);return v==null?d:JSON.parse(v)}catch(e){return d}},
+             set(k,v){try{localStorage.setItem('tp_'+k,JSON.stringify(v))}catch(e){}}};
+
+const SAMPLE={id:'demo',title:'Ejemplo: presentación',text:
+`Hola, soy Yoriell.
+
+Hoy quiero contarte algo que llevo tiempo preparando.
+
+Esta es una canción nueva, escrita en casa, con una guitarra y muchas ganas.
+
+Si te gusta lo que hago, sígueme para no perderte el estreno.
+
+Y cuéntame en los comentarios qué te ha parecido.
+
+¡Nos vemos muy pronto!`};
+
+let scripts=store.get('scripts',null)||[SAMPLE];
+let curId=store.get('cur',scripts[0].id);
+let cfg=Object.assign({speed:4,fs:34,band:40,align:'left',count:3,q:1080},store.get('cfg',{}));
+let editId=null;
+
+/* ---------- Prompter ---------- */
+const band=$('band'),scroller=$('scroller'),textEl=$('text');
+let offset=0,running=false,paused=false,last=0;
+const pxPerSec=()=>8+cfg.speed*9*(cfg.fs/34);
+
+function current(){return scripts.find(s=>s.id===curId)||scripts[0]}
+function renderText(){
+  const s=current();
+  textEl.textContent='';
+  const top=document.createElement('span');top.className='pad';top.style.height=(band.clientHeight*0.28)+'px';
+  const body=document.createTextNode(s?s.text:'');
+  const end=document.createElement('span');end.className='pad';end.style.height=(band.clientHeight*0.75)+'px';
+  textEl.append(top,body,end);
+  offset=0;apply();
+}
+function apply(){scroller.style.transform=`translate3d(0,${-offset}px,0)`}
+function maxOff(){return Math.max(0,scroller.scrollHeight-band.clientHeight)}
+function tick(t){
+  if(!running)return;
+  const dt=last?(t-last)/1000:0;last=t;
+  if(!paused&&!dragging){offset=Math.min(maxOff(),offset+pxPerSec()*dt);apply()}
+  requestAnimationFrame(tick);
+}
+function startScroll(){offset=0;apply();paused=false;$('pauseTag').hidden=true;running=true;last=0;requestAnimationFrame(tick)}
+function stopScroll(){running=false}
+
+// tocar = pausa; arrastrar = mover texto
+let dragging=false,dy0=0,off0=0,moved=false;
+band.addEventListener('pointerdown',e=>{dragging=true;moved=false;dy0=e.clientY;off0=offset;band.setPointerCapture(e.pointerId)});
+band.addEventListener('pointermove',e=>{if(!dragging)return;const d=dy0-e.clientY;if(Math.abs(d)>6)moved=true;if(moved){offset=Math.max(0,Math.min(maxOff(),off0+d));apply()}});
+band.addEventListener('pointerup',()=>{dragging=false;last=0;if(!moved&&running){paused=!paused;$('pauseTag').hidden=!paused}});
+band.addEventListener('pointercancel',()=>{dragging=false});
+
+/* ---------- Cámara ---------- */
+const cam=$('cam');let stream=null;
+async function openCam(){
+  $('err').hidden=true;
+  if(stream)stream.getTracks().forEach(t=>t.stop());
+  if(!navigator.mediaDevices||!navigator.mediaDevices.getUserMedia){
+    return showErr('Este navegador no permite usar la cámara aquí. Abre la app desde su enlace https en Safari.');
+  }
+  const big=cfg.q===2160;
+  try{
+    stream=await navigator.mediaDevices.getUserMedia({
+      video:{facingMode:'user',width:{ideal:big?2160:1080},height:{ideal:big?3840:1920},frameRate:{ideal:30}},
+      audio:{echoCancellation:false,noiseSuppression:false,autoGainControl:true}
+    });
+    cam.srcObject=stream;await cam.play().catch(()=>{});
+  }catch(e){
+    showErr(e.name==='NotAllowedError'
+      ?'Has bloqueado el permiso. Ve a Ajustes › Safari › Cámara y Micrófono y elige «Preguntar» o «Permitir», luego vuelve aquí.'
+      :'Error: '+(e.message||e.name));
+  }
+}
+function showErr(m){$('errMsg').textContent=m;$('err').hidden=false}
+$('bRetry').onclick=openCam;
+
+/* ---------- Grabación ---------- */
+let rec=null,chunks=[],t0=0,timerInt=null,blob=null,blobUrl=null,recording=false,practicing=false;
+function pickType(){
+  const c=['video/mp4;codecs=avc1,mp4a.40.2','video/mp4;codecs=hvc1','video/mp4','video/webm;codecs=vp9,opus','video/webm'];
+  for(const t of c){if(window.MediaRecorder&&MediaRecorder.isTypeSupported(t))return t}
+  return '';
+}
+async function countdown(){
+  const n=cfg.count;if(!n)return;
+  const el=$('count');el.hidden=false;
+  for(let i=n;i>0;i--){el.textContent=i;await new Promise(r=>setTimeout(r,1000))}
+  el.hidden=true;
+}
+async function startRec(){
+  if(!stream)return openCam();
+  if(practicing)stopPractice();
+  $('rec').disabled=true;
+  await countdown();
+  const type=pickType();
+  try{rec=new MediaRecorder(stream,{mimeType:type||undefined,videoBitsPerSecond:cfg.q===2160?24e6:10e6,audioBitsPerSecond:192000})}
+  catch(e){rec=new MediaRecorder(stream)}
+  chunks=[];
+  rec.ondataavailable=e=>{if(e.data&&e.data.size)chunks.push(e.data)};
+  rec.onstop=finish;
+  rec.start(1000);
+  recording=true;$('rec').classList.add('on');$('rec').disabled=false;$('rec').setAttribute('aria-label','Parar');
+  t0=Date.now();$('timer').hidden=false;updTime();timerInt=setInterval(updTime,500);
+  startScroll();lockScreen();
+}
+function updTime(){const s=Math.floor((Date.now()-t0)/1000);$('time').textContent=String(Math.floor(s/60)).padStart(2,'0')+':'+String(s%60).padStart(2,'0')}
+function stopRec(){
+  if(!rec)return;recording=false;rec.stop();
+  clearInterval(timerInt);$('timer').hidden=true;$('rec').classList.remove('on');$('rec').setAttribute('aria-label','Grabar');
+  stopScroll();
+}
+function finish(){
+  const type=(rec&&rec.mimeType)||'video/mp4';
+  blob=new Blob(chunks,{type});
+  if(blobUrl)URL.revokeObjectURL(blobUrl);
+  blobUrl=URL.createObjectURL(blob);
+  $('preview').src=blobUrl;
+  const secs=Math.round((Date.now()-t0)/1000);
+  $('info').textContent=`${Math.floor(secs/60)}:${String(secs%60).padStart(2,'0')} · ${(blob.size/1048576).toFixed(1)} MB`;
+  $('sResult').hidden=false;
+}
+$('rec').onclick=()=>recording?stopRec():startRec();
+
+function stopPractice(){practicing=false;stopScroll();$('bPractice').textContent='Ensayar'}
+$('bPractice').onclick=()=>{
+  if(recording)return;
+  if(practicing){stopPractice();renderText();return}
+  practicing=true;$('bPractice').textContent='Parar';startScroll();lockScreen();
+};
+
+$('bSave').onclick=async()=>{
+  if(!blob)return;
+  const ext=blob.type.includes('mp4')?'mp4':'webm';
+  const name=`toma-${new Date().toISOString().slice(0,16).replace(/[:T]/g,'-')}.${ext}`;
+  const file=new File([blob],name,{type:blob.type});
+  if(navigator.canShare&&navigator.canShare({files:[file]})){
+    try{await navigator.share({files:[file]})}catch(e){}
+  }else{
+    const a=document.createElement('a');a.href=blobUrl;a.download=name;document.body.appendChild(a);a.click();a.remove();
+  }
+};
+function closeResult(){$('preview').pause();$('sResult').hidden=true;renderText()}
+$('bDiscard').onclick=closeResult;
+$('bAgain').onclick=()=>{closeResult();startRec()};
+
+/* ---------- Pantalla siempre encendida ---------- */
+let wake=null;
+async function lockScreen(){try{if('wakeLock' in navigator&&!wake){wake=await navigator.wakeLock.request('screen');wake.addEventListener('release',()=>wake=null)}}catch(e){}}
+document.addEventListener('visibilitychange',()=>{if(document.visibilityState==='visible'){lockScreen();if(!stream||!stream.active)openCam()}else if(recording)stopRec()});
+
+/* ---------- Ajustes ---------- */
+function saveCfg(){store.set('cfg',cfg)}
+function applyCfg(){
+  document.documentElement.style.setProperty('--fs',cfg.fs+'px');
+  document.documentElement.style.setProperty('--bandH',cfg.band+'vh');
+  document.documentElement.style.setProperty('--align',cfg.align);
+  $('speedLbl').textContent='Vel '+cfg.speed;
+  $('rSpeed').value=cfg.speed;$('vSpeed').textContent=cfg.speed;
+  $('rFs').value=cfg.fs;$('vFs').textContent=cfg.fs+' px';
+  $('rBand').value=cfg.band;$('vBand').textContent=cfg.band+'% de la pantalla';
+  for(const [seg,key] of [['segAlign','align'],['segCount','count'],['segQ','q']])
+    [...$(seg).children].forEach(b=>b.classList.toggle('on',String(cfg[key])===b.dataset.v));
+}
+const setSpeed=v=>{cfg.speed=Math.max(1,Math.min(15,v));applyCfg();saveCfg()};
+$('bSlower').onclick=()=>setSpeed(cfg.speed-1);
+$('bFaster').onclick=()=>setSpeed(cfg.speed+1);
+$('rSpeed').oninput=e=>setSpeed(+e.target.value);
+$('rFs').oninput=e=>{cfg.fs=+e.target.value;applyCfg();saveCfg()};
+$('rBand').oninput=e=>{cfg.band=+e.target.value;applyCfg();saveCfg()};
+$('segAlign').onclick=e=>{if(e.target.dataset.v){cfg.align=e.target.dataset.v;applyCfg();saveCfg()}};
+$('segCount').onclick=e=>{if(e.target.dataset.v){cfg.count=+e.target.dataset.v;applyCfg();saveCfg()}};
+$('segQ').onclick=e=>{if(e.target.dataset.v&&!recording){cfg.q=+e.target.dataset.v;applyCfg();saveCfg();openCam()}};
+$('bSettings').onclick=()=>{if(!recording)$('sSettings').hidden=false};
+$('bCloseSet').onclick=()=>{$('sSettings').hidden=true;renderText()};
+
+/* ---------- Guiones ---------- */
+function saveScripts(){store.set('scripts',scripts);store.set('cur',curId)}
+function renderList(){
+  const L=$('list');L.textContent='';
+  scripts.forEach(s=>{
+    const b=document.createElement('button');b.className='item'+(s.id===editId?' sel':'');
+    const t=document.createElement('b');t.textContent=s.title||'Sin título';
+    const w=document.createElement('small');w.textContent=s.text.trim().split(/\s+/).filter(Boolean).length+' palabras';
+    b.append(t,w);b.onclick=()=>{commitEdit();loadEdit(s.id)};L.append(b);
+  });
+}
+function loadEdit(id){editId=id;const s=scripts.find(x=>x.id===id);$('title').value=s?s.title:'';$('editor').value=s?s.text:'';renderList()}
+function commitEdit(){const s=scripts.find(x=>x.id===editId);if(s){s.title=$('title').value.trim()||'Sin título';s.text=$('editor').value;saveScripts()}}
+$('bScripts').onclick=()=>{if(recording)return;if(practicing)stopPractice();loadEdit(curId);$('sScripts').hidden=false};
+$('bNew').onclick=()=>{commitEdit();const s={id:'s'+Date.now(),title:'Guion nuevo',text:''};scripts.unshift(s);saveScripts();loadEdit(s.id);$('title').select()};
+$('bDelete').onclick=()=>{
+  const b=$('bDelete');
+  if(b.dataset.arm!=='1'){b.dataset.arm='1';b.textContent='¿Seguro? Toca otra vez';setTimeout(()=>{b.dataset.arm='';b.textContent='Borrar'},2500);return}
+  b.dataset.arm='';b.textContent='Borrar';
+  scripts=scripts.filter(s=>s.id!==editId);if(!scripts.length)scripts=[{id:'s'+Date.now(),title:'Guion nuevo',text:''}];
+  if(!scripts.find(s=>s.id===curId))curId=scripts[0].id;saveScripts();loadEdit(scripts[0].id);
+};
+$('title').oninput=$('editor').oninput=()=>{commitEdit();renderList()};
+$('bUse').onclick=()=>{commitEdit();curId=editId;saveScripts();$('sScripts').hidden=true;renderText()};
+document.querySelectorAll('.sheet').forEach(s=>s.addEventListener('click',e=>{if(e.target===s&&s.id!=='sResult'){if(s.id==='sScripts'){commitEdit()}s.hidden=true;renderText()}}));
+
+window.addEventListener('resize',()=>{if(!running)renderText()});
+applyCfg();renderText();openCam();
+</script>
+</body>
+</html>
