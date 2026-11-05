@@ -26,7 +26,11 @@ html,body{margin:0;height:100%;background:var(--ink);color:var(--paper);font-fam
 button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
 button:focus-visible{outline:2px solid var(--amber);outline-offset:2px}
 
-#cam{position:fixed;inset:0;width:100%;height:100%;object-fit:cover;transform:scaleX(-1);background:#000}
+#cam{position:fixed;left:0;top:0;width:2px;height:2px;opacity:0;pointer-events:none}
+html,body{background:#000}
+#view{position:fixed;inset:0;width:100%;height:100%;object-fit:contain;transform:scaleX(-1);background:#000}
+body.h #view{inset:auto 0 auto 0;top:calc(var(--st) + 8px + var(--bandH,40vh) + 56px);height:auto;aspect-ratio:16/9}
+#fmtTag{position:fixed;right:max(12px,env(safe-area-inset-right,0px));bottom:calc(var(--sb) + 110px);font-size:12px;font-weight:700;letter-spacing:.06em;color:var(--dim);background:var(--glass);padding:4px 9px;border-radius:99px;pointer-events:none}
 
 /* Banda del prompter */
 #band{position:fixed;left:10px;right:10px;top:calc(var(--st) + 8px);height:var(--bandH,40vh);
@@ -56,13 +60,13 @@ button:focus-visible{outline:2px solid var(--amber);outline-offset:2px}
 #count{position:fixed;inset:0;display:grid;place-items:center;font-size:140px;font-weight:800;color:#fff;text-shadow:0 4px 30px rgba(0,0,0,.6);pointer-events:none}
 
 /* Barra inferior */
-#bar{position:fixed;left:0;right:0;bottom:0;padding:14px 18px calc(var(--sb) + 16px);display:flex;align-items:center;justify-content:space-between;gap:10px;
+#bar{position:fixed;left:0;right:0;bottom:0;padding:14px 12px calc(var(--sb) + 16px);display:flex;align-items:center;justify-content:space-between;gap:10px;
   background:linear-gradient(transparent,rgba(0,0,0,.55))}
-.side{display:flex;gap:8px;flex:1}
+.side{display:flex;gap:6px;flex:1;min-width:0}
 .side.r{justify-content:flex-end}
-.pill{min-width:48px;height:48px;border-radius:24px;background:var(--glass);display:grid;place-items:center;padding:0 12px;font-size:14px;font-weight:600;-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px)}
+.pill{min-width:44px;height:44px;border-radius:22px;background:var(--glass);display:grid;place-items:center;padding:0 10px;font-size:14px;font-weight:600;-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px)}
 .pill svg{width:22px;height:22px}
-#rec{width:78px;height:78px;border-radius:50%;border:4px solid #fff;display:grid;place-items:center;flex:none}
+#rec{width:74px;height:74px;border-radius:50%;border:4px solid #fff;display:grid;place-items:center;flex:none}
 #rec span{width:58px;height:58px;border-radius:50%;background:var(--rec);transition:all .2s}
 #rec.on span{width:28px;height:28px;border-radius:7px}
 #speedLbl{font-variant-numeric:tabular-nums}
@@ -99,6 +103,8 @@ video.preview{width:100%;max-height:55vh;border-radius:16px;background:#000;obje
 <body>
 
 <video id="cam" playsinline autoplay muted></video>
+<canvas id="view" aria-label="Vista previa: así queda el vídeo"></canvas>
+<div id="fmtTag"></div>
 
 <div id="band" aria-label="Texto del guion">
   <div id="guide"></div>
@@ -115,7 +121,8 @@ video.preview{width:100%;max-height:55vh;border-radius:16px;background:#000;obje
     <button class="pill" id="bScripts" aria-label="Guiones">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 6h14M5 11h14M5 16h9"/></svg>
     </button>
-    <button class="pill" id="bPractice" aria-label="Ensayar sin grabar">Ensayar</button>
+    <button class="pill" id="bPractice" aria-label="Ensayar sin grabar"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5.5v13l10.5-6.5z"/></svg></button>
+    <button class="pill" id="bFmt" aria-label="Cambiar formato vertical u horizontal"></button>
   </div>
   <button id="rec" aria-label="Grabar"><span></span></button>
   <div class="side r">
@@ -152,6 +159,9 @@ video.preview{width:100%;max-height:55vh;border-radius:16px;background:#000;obje
     </div>
     <div class="set" style="display:flex;flex-direction:column;gap:6px;font-size:14px;color:var(--dim)">Cuenta atrás antes de grabar
       <div class="seg" id="segCount"><button data-v="0">No</button><button data-v="3">3 s</button><button data-v="5">5 s</button></div>
+    </div>
+    <div class="set" style="display:flex;flex-direction:column;gap:6px;font-size:14px;color:var(--dim)">Formato del vídeo
+      <div class="seg" id="segFmt"><button data-v="v">Vertical 9:16</button><button data-v="h">Horizontal 16:9</button></div>
     </div>
     <div class="set" style="display:flex;flex-direction:column;gap:6px;font-size:14px;color:var(--dim)">Calidad
       <div class="seg" id="segQ"><button data-v="1080">1080p</button><button data-v="2160">4K</button></div>
@@ -223,7 +233,7 @@ let scripts=store.get('scripts',null)||[SAMPLE];
   }
 })();
 let curId=store.get('cur',scripts[0].id);
-let cfg=Object.assign({speed:4,fs:34,band:40,align:'left',count:3,q:1080},store.get('cfg',{}));
+let cfg=Object.assign({speed:4,fs:34,band:40,align:'left',count:3,q:1080,fmt:'v'},store.get('cfg',{}));
 let editId=null;
 
 /* ---------- Prompter ---------- */
@@ -280,7 +290,7 @@ async function openCam(){
   const big=cfg.q===2160;
   try{
     stream=await navigator.mediaDevices.getUserMedia({
-      video:{facingMode:'user',width:{ideal:big?2160:1080},height:{ideal:big?3840:1920},frameRate:{ideal:30}},
+      video:{facingMode:'user',width:{ideal:big?3840:1920},height:{ideal:big?2160:1080},frameRate:{ideal:30}},
       audio:{echoCancellation:false,noiseSuppression:false,autoGainControl:true}
     });
     cam.srcObject=stream;await cam.play().catch(()=>{});
@@ -291,6 +301,27 @@ async function openCam(){
   }
 }
 function showErr(m){$('errMsg').textContent=m;$('err').hidden=false}
+
+/* Lienzo: recorta la cámara al formato elegido. Lo que ves es exactamente lo que se graba. */
+const view=$('view'),ctx=view.getContext('2d',{alpha:false});
+function outSize(){
+  const long=cfg.q===2160?3840:1920,short=cfg.q===2160?2160:1080;
+  return cfg.fmt==='h'?[long,short]:[short,long];
+}
+function sizeCanvas(){const [w,h]=outSize();if(view.width!==w||view.height!==h){view.width=w;view.height=h}}
+function draw(){
+  const vw=cam.videoWidth,vh=cam.videoHeight,W=view.width,H=view.height;
+  if(vw&&vh){
+    const scale=Math.max(W/vw,H/vh),sw=W/scale,sh=H/scale;
+    ctx.drawImage(cam,(vw-sw)/2,(vh-sh)/2,sw,sh,0,0,W,H);
+  }
+  requestAnimationFrame(draw);
+}
+sizeCanvas();requestAnimationFrame(draw);
+function setFmt(f){
+  if(recording)return;
+  cfg.fmt=f;saveCfg();sizeCanvas();applyCfg();
+}
 $('bRetry').onclick=openCam;
 
 /* ---------- Grabación ---------- */
@@ -312,8 +343,9 @@ async function startRec(){
   $('rec').disabled=true;
   await countdown();
   const type=pickType();
-  try{rec=new MediaRecorder(stream,{mimeType:type||undefined,videoBitsPerSecond:cfg.q===2160?24e6:10e6,audioBitsPerSecond:192000})}
-  catch(e){rec=new MediaRecorder(stream)}
+  const out=new MediaStream([...view.captureStream(30).getVideoTracks(),...stream.getAudioTracks()]);
+  try{rec=new MediaRecorder(out,{mimeType:type||undefined,videoBitsPerSecond:cfg.q===2160?24e6:10e6,audioBitsPerSecond:192000})}
+  catch(e){rec=new MediaRecorder(out)}
   chunks=[];
   rec.ondataavailable=e=>{if(e.data&&e.data.size)chunks.push(e.data)};
   rec.onstop=finish;
@@ -329,6 +361,7 @@ function stopRec(){
   stopScroll();
 }
 function finish(){
+  try{rec.stream.getVideoTracks().forEach(t=>t.stop())}catch(e){}
   const type=(rec&&rec.mimeType)||'video/mp4';
   blob=new Blob(chunks,{type});
   if(blobUrl)URL.revokeObjectURL(blobUrl);
@@ -340,11 +373,12 @@ function finish(){
 }
 $('rec').onclick=()=>recording?stopRec():startRec();
 
-function stopPractice(){practicing=false;stopScroll();$('bPractice').textContent='Ensayar'}
+const PLAY_ICON=$('bPractice').innerHTML,STOP_ICON='<svg viewBox="0 0 24 24" fill="currentColor"><rect x="7" y="7" width="10" height="10" rx="2"/></svg>';
+function stopPractice(){practicing=false;stopScroll();$('bPractice').innerHTML=PLAY_ICON}
 $('bPractice').onclick=()=>{
   if(recording)return;
   if(practicing){stopPractice();renderText();return}
-  practicing=true;$('bPractice').textContent='Parar';startScroll();lockScreen();
+  practicing=true;$('bPractice').innerHTML=STOP_ICON;startScroll();lockScreen();
 };
 
 $('bSave').onclick=async()=>{
@@ -381,7 +415,9 @@ function applyCfg(){
   $('rSpeed').value=cfg.speed;$('vSpeed').textContent=cfg.speed;
   $('rFs').value=cfg.fs;$('vFs').textContent=cfg.fs+' px';
   $('rBand').value=cfg.band;$('vBand').textContent=cfg.band+'% de la pantalla';
-  for(const [seg,key] of [['segAlign','align'],['segCount','count'],['segQ','q']])
+  $('bFmt').textContent=cfg.fmt==='h'?'16:9':'9:16';document.body.classList.toggle('h',cfg.fmt==='h');
+  $('fmtTag').textContent=(cfg.fmt==='h'?'HORIZONTAL':'VERTICAL')+' · '+(cfg.q===2160?'4K':'1080p');
+  for(const [seg,key] of [['segAlign','align'],['segCount','count'],['segQ','q'],['segFmt','fmt']])
     [...$(seg).children].forEach(b=>b.classList.toggle('on',String(cfg[key])===b.dataset.v));
 }
 const setSpeed=v=>{cfg.speed=Math.max(1,Math.min(15,v));applyCfg();saveCfg()};
@@ -392,7 +428,9 @@ $('rFs').oninput=e=>{cfg.fs=+e.target.value;applyCfg();saveCfg()};
 $('rBand').oninput=e=>{cfg.band=+e.target.value;applyCfg();saveCfg()};
 $('segAlign').onclick=e=>{if(e.target.dataset.v){cfg.align=e.target.dataset.v;applyCfg();saveCfg()}};
 $('segCount').onclick=e=>{if(e.target.dataset.v){cfg.count=+e.target.dataset.v;applyCfg();saveCfg()}};
-$('segQ').onclick=e=>{if(e.target.dataset.v&&!recording){cfg.q=+e.target.dataset.v;applyCfg();saveCfg();openCam()}};
+$('segQ').onclick=e=>{if(e.target.dataset.v&&!recording){cfg.q=+e.target.dataset.v;applyCfg();saveCfg();sizeCanvas();openCam()}};
+$('segFmt').onclick=e=>{if(e.target.dataset.v)setFmt(e.target.dataset.v)};
+$('bFmt').onclick=()=>setFmt(cfg.fmt==='h'?'v':'h');
 $('bSettings').onclick=()=>{if(!recording)$('sSettings').hidden=false};
 $('bCloseSet').onclick=()=>{$('sSettings').hidden=true;renderText()};
 
