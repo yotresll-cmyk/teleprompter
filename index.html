@@ -280,19 +280,31 @@ band.addEventListener('pointerup',()=>{dragging=false;last=0;if(!moved&&running)
 band.addEventListener('pointercancel',()=>{dragging=false});
 
 /* ---------- Cámara ---------- */
-const cam=$('cam');let stream=null;
+const cam=$('cam');let stream=null,mic=null;
+try{if(navigator.audioSession)navigator.audioSession.type='play-and-record'}catch(e){}
+/* Micrófono aparte: se comprueba antes de cada toma y se vuelve a abrir si iOS lo ha silenciado */
+function micOk(){const t=mic&&mic.getAudioTracks()[0];return !!(t&&t.readyState==='live'&&!t.muted&&t.enabled)}
+async function ensureMic(force){
+  if(!force&&micOk())return true;
+  if(mic)mic.getTracks().forEach(t=>t.stop());
+  try{
+    mic=await navigator.mediaDevices.getUserMedia({audio:{echoCancellation:false,noiseSuppression:false,autoGainControl:true}});
+    return true;
+  }catch(e){mic=null;return false}
+}
 async function openCam(){
   $('err').hidden=true;
   if(stream)stream.getTracks().forEach(t=>t.stop());
+  stream=null;
   if(!navigator.mediaDevices||!navigator.mediaDevices.getUserMedia){
     return showErr('Este navegador no permite usar la cámara aquí. Abre la app desde su enlace https en Safari.');
   }
   const big=cfg.q===2160;
   try{
     stream=await navigator.mediaDevices.getUserMedia({
-      video:{facingMode:'user',width:{ideal:big?3840:1920},height:{ideal:big?2160:1080},frameRate:{ideal:30}},
-      audio:{echoCancellation:false,noiseSuppression:false,autoGainControl:true}
+      video:{facingMode:'user',width:{ideal:big?3840:1920},height:{ideal:big?2160:1080},frameRate:{ideal:30,max:30}}
     });
+    await ensureMic(true);
     cam.srcObject=stream;await cam.play().catch(()=>{});
   }catch(e){
     showErr(e.name==='NotAllowedError'
@@ -309,15 +321,19 @@ function outSize(){
   return cfg.fmt==='h'?[long,short]:[short,long];
 }
 function sizeCanvas(){const [w,h]=outSize();if(view.width!==w||view.height!==h){view.width=w;view.height=h}}
-function draw(){
+function paint(){
   const vw=cam.videoWidth,vh=cam.videoHeight,W=view.width,H=view.height;
-  if(vw&&vh){
-    const scale=Math.max(W/vw,H/vh),sw=W/scale,sh=H/scale;
-    ctx.drawImage(cam,(vw-sw)/2,(vh-sh)/2,sw,sh,0,0,W,H);
-  }
-  requestAnimationFrame(draw);
+  if(!vw||!vh)return;
+  const scale=Math.max(W/vw,H/vh),sw=W/scale,sh=H/scale;
+  ctx.drawImage(cam,(vw-sw)/2,(vh-sh)/2,sw,sh,0,0,W,H);
 }
-sizeCanvas();requestAnimationFrame(draw);
+// Se dibuja una vez por cada fotograma nuevo de la cámara (30 por segundo), no a 120 Hz
+const hasRVFC='requestVideoFrameCallback' in HTMLVideoElement.prototype;
+let lastT=0;
+function loopRVFC(){paint();cam.requestVideoFrameCallback(loopRVFC)}
+function loopRAF(t){if(t-lastT>=32){lastT=t;paint()}requestAnimationFrame(loopRAF)}
+sizeCanvas();
+if(hasRVFC)cam.requestVideoFrameCallback(loopRVFC);else requestAnimationFrame(loopRAF);
 function setFmt(f){
   if(recording)return;
   cfg.fmt=f;saveCfg();sizeCanvas();applyCfg();
@@ -341,9 +357,12 @@ async function startRec(){
   if(!stream)return openCam();
   if(practicing)stopPractice();
   $('rec').disabled=true;
+  const okMic=await ensureMic(false);
+  if(!okMic){$('rec').disabled=false;return showErr('No puedo usar el micrófono. Revisa en Ajustes › Safari › Micrófono que esté permitido y vuelve a intentarlo.')}
   await countdown();
+  if(!micOk())await ensureMic(true);
   const type=pickType();
-  const out=new MediaStream([...view.captureStream(30).getVideoTracks(),...stream.getAudioTracks()]);
+  const out=new MediaStream([...view.captureStream(30).getVideoTracks(),...mic.getAudioTracks()]);
   try{rec=new MediaRecorder(out,{mimeType:type||undefined,videoBitsPerSecond:cfg.q===2160?24e6:10e6,audioBitsPerSecond:192000})}
   catch(e){rec=new MediaRecorder(out)}
   chunks=[];
@@ -392,7 +411,7 @@ $('bSave').onclick=async()=>{
     const a=document.createElement('a');a.href=blobUrl;a.download=name;document.body.appendChild(a);a.click();a.remove();
   }
 };
-function closeResult(){$('preview').pause();$('sResult').hidden=true;renderText()}
+function closeResult(){const v=$('preview');v.pause();v.removeAttribute('src');v.load();$('sResult').hidden=true;renderText()}
 $('bDiscard').onclick=closeResult;
 function goNext(){const i=scripts.findIndex(x=>x.id===curId);curId=scripts[(i+1)%scripts.length].id;saveScripts();renderText()}
 $('bNext').onclick=()=>{if(!running)goNext()};
@@ -403,7 +422,7 @@ $('bAgain').onclick=()=>{closeResult();startRec()};
 /* ---------- Pantalla siempre encendida ---------- */
 let wake=null;
 async function lockScreen(){try{if('wakeLock' in navigator&&!wake){wake=await navigator.wakeLock.request('screen');wake.addEventListener('release',()=>wake=null)}}catch(e){}}
-document.addEventListener('visibilitychange',()=>{if(document.visibilityState==='visible'){lockScreen();if(!stream||!stream.active)openCam()}else if(recording)stopRec()});
+document.addEventListener('visibilitychange',()=>{if(document.visibilityState==='visible'){lockScreen();if(!stream||!stream.active)openCam();else ensureMic(false)}else if(recording)stopRec()});
 
 /* ---------- Ajustes ---------- */
 function saveCfg(){store.set('cfg',cfg)}
