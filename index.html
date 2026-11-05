@@ -42,7 +42,10 @@ body.h #view{inset:auto 0 auto 0;top:calc(var(--st) + 8px + var(--bandH,40vh) + 
 #text .pad{display:block}
 #text .cue{display:block;font-size:.62em;line-height:1.35;font-weight:500;font-style:italic;color:var(--dim);border-left:3px solid var(--amber);padding-left:10px;margin:.15em 0}
 #text .ph{color:var(--amber)}
-#text .ch{color:#5ec8ff;font-weight:800;font-size:.8em;margin-right:.12em;font-style:normal}
+#text .chl{display:block;line-height:2.15}
+#text .cw{white-space:nowrap}
+#text .ch{position:relative;display:inline-block;width:0;height:0}
+#text .ch>i{position:absolute;left:0;bottom:1.05em;font-style:normal;color:#5ec8ff;font-weight:800;font-size:.78em;line-height:1;white-space:nowrap}
 #chip{position:fixed;left:0;right:0;top:calc(var(--st) + 8px + var(--bandH,40vh) + 10px);display:flex;justify-content:center;gap:8px;padding:0 16px;pointer-events:none}
 #chip button{pointer-events:auto;max-width:100%;background:var(--glass);border-radius:99px;padding:7px 14px;font-size:14px;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px)}
 #chip .nx{flex:none;color:var(--amber)}
@@ -253,9 +256,21 @@ function renderText(){
   (s?s.text:'').split('\n').forEach((ln,i,arr)=>{
     const t=ln.trim();
     if(/^\(.*\)$/.test(t)){const c=document.createElement('span');c.className='cue';c.textContent=t.slice(1,-1);body.append(c);return}
-    t.split(/(\[[^\]]*\]|\{[^}]*\})/).forEach(part=>{
-      if(/^\{.*\}$/.test(part)){const c=document.createElement('span');c.className='ch';c.textContent=part.slice(1,-1);body.append(c)}
-      else if(/^\[.*\]$/.test(part)){const h=document.createElement('span');h.className='ph';h.textContent=part;body.append(h)}
+    if(/\{[^}]*\}/.test(t)){
+      const line=document.createElement('span');line.className='chl';body.append(line);
+      t.split(/(\s+)/).forEach(w=>{
+        if(!/\{/.test(w)){line.append(document.createTextNode(w));return}
+        const cw=document.createElement('span');cw.className='cw';
+        w.split(/(\{[^}]*\})/).forEach(p=>{
+          if(/^\{.*\}$/.test(p)){const c=document.createElement('span');c.className='ch';const k=document.createElement('i');k.textContent=p.slice(1,-1);c.append(k);cw.append(c)}
+          else if(p)cw.append(document.createTextNode(p));
+        });
+        line.append(cw);
+      });
+      return;
+    } else
+    t.split(/(\[[^\]]*\])/).forEach(part=>{
+      if(/^\[.*\]$/.test(part)){const h=document.createElement('span');h.className='ph';h.textContent=part;body.append(h)}
       else body.append(document.createTextNode(part));
     });
     if(i<arr.length-1)body.append(document.createTextNode('\n'));

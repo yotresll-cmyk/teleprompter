@@ -163,39 +163,26 @@ Las tres están en mi versión de Simplemente Amándote, que sale el 4 de diciem
 
 Guárdalo para enseñárselo a alguien que diga que todo lo cubano suena igual.`},
 
-{id:'sa-R13',rev:2,title:'R13 · Mié 25 nov · Dedicatoria',text:
+{id:'sa-R13',rev:4,title:'R13 · Mié 25 nov · Dedicatoria',text:
 `Etiqueta a ese amigo o amiga del que te enamoraste.
 
 Yo ya lo hice con una canción.
 
-(Coro mirando a cámara. Los acordes, en azul, van delante de la palabra donde cambian)
+(Coro mirando a cámara. Los acordes van en azul, encima de la letra)
 
 Y te conviertes en {Bb}luz
-
 Cuando estás {C}conmigo
-
-Porque te abrigan mis {F}manos
-
-{C/E}Convertidas en {Dm}alivio
-
+Porque te abrigan mis ma{F}nos
+Conver{C/E}tidas en a{Dm}livio
 
 
 Y se derrama tu {Bb}voz
-
-Para llenar {C}vacíos
-
-Y me devuelves las {F}ganas
-
+Para llenar va{C}cíos
+Y me devuelves las ga{F}nas
 De {C/E}pensar en mi {Dm}delirio
-
-
-
-{Bb}Amándote
-
-Simplemente {C}amándote
-
+{Bb}amándote
+simplemente amán{C}dote
 {F}Te vivo
-
 
 
 No hace falta que se lo digas.
