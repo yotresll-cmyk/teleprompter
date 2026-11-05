@@ -98,7 +98,7 @@ El enlace está en mi perfil.
 
 Sale el 4 de diciembre.`},
 
-{id:'sa-R08',rev:3,title:'R8 · Mié 18 nov · La historia',text:
+{id:'sa-R08',rev:4,title:'R8 · Mié 18 nov · La historia',text:
 `(Pantalla dividida: arriba tú hablando, abajo tus manos en la guitarra)
 
 ¿Quién no se ha enamorado de su mejor amigo o amiga?
@@ -109,7 +109,12 @@ Y como no sabía cómo decírselo, se lo escribí en una canción.
 
 Empieza así:
 
-(Cantas con la guitarra: «Lo que yo siento cuando estoy contigo, no lo puedo controlar…»)
+(Cantas con la guitarra)
+
+{F}Lo que yo siento
+Cuando estoy con{C/E}tigo
+No lo {Gm}puedo contro{Bb}lar
+
 
 ¿Quieres saber cómo termina?
 
@@ -135,10 +140,27 @@ Está en Spotify, junto con Quedarme en tus besos.
 
 Escúchala y dale a seguir en Spotify: así el 4 de diciembre te llega la nueva.`},
 
-{id:'sa-R11',title:'R11 · Lun 23 nov · Canta conmigo',text:
+{id:'sa-R11',rev:2,title:'R11 · Lun 23 nov · Canta conmigo',text:
 `Te dejo el estribillo para que lo cantes conmigo.
 
-(Cantas la primera mitad del estribillo y dejas la segunda solo con la guitarra, con la letra en pantalla)
+(Cantas tú esta primera mitad)
+
+Y te conviertes en {Bb}luz
+Cuando estás {C}conmigo
+Porque te abrigan mis ma{F}nos
+Conver{C/E}tidas en a{Dm}livio
+
+
+(Esta segunda mitad la tocas solo con la guitarra, sin cantar: la canta la gente)
+
+Y se derrama tu {Bb}voz
+Para llenar va{C}cíos
+Y me devuelves las ga{F}nas
+De {C/E}pensar en mi {Dm}delirio
+{Bb}amándote
+simplemente amán{C}dote
+{F}Te vivo
+
 
 Dale a Remix, cántalo conmigo y lo comparto en mis stories.
 
@@ -200,10 +222,18 @@ Si te gusta cómo suena el son en mi voz, el 4 de diciembre sale Simplemente Am�
 
 Pre-save en mi perfil.`},
 
-{id:'sa-R15',title:'R15 · Vie 27 nov · Lo que nunca le dije',text:
+{id:'sa-R15',rev:2,title:'R15 · Vie 27 nov · Lo que nunca le dije',text:
 `Esta parte de la canción no la ha escuchado nadie. Ni ella.
 
-(Cantas el puente, muy íntimo: «Soy consciente de un sueño que no quiero despertar… como amigo te amo, y eso nunca cambiará.» Un segundo de silencio mirando a cámara)
+(Cantas el puente, muy íntimo)
+
+{Eb}Soy consciente de un {Bb}sueño
+Que no quiero desper{F}tar
+Como amigo te amo
+Y eso nunca cambia{C}rá
+
+
+(Un segundo de silencio mirando a cámara)
 
 El resto, el viernes 4 de diciembre.
 
@@ -251,10 +281,24 @@ Gracias por aconsejarme, por votar y por esperarla.
 
 Si todavía no la guardaste, el enlace está en mi perfil.`},
 
-{id:'sa-R20',rev:2,title:'R20 · Vie 4 dic · Lanzamiento',text:
+{id:'sa-R20',rev:3,title:'R20 · Vie 4 dic · Lanzamiento',text:
 `Ya está. Simplemente Amándote ya está en Spotify.
 
-(Cantas el estribillo con el máster de fondo y tomas de la pareja bailando)
+(Cantas el coro con el máster de fondo; luego se montan tomas de la pareja bailando)
+
+Y te conviertes en {Bb}luz
+Cuando estás {C}conmigo
+Porque te abrigan mis ma{F}nos
+Conver{C/E}tidas en a{Dm}livio
+
+Y se derrama tu {Bb}voz
+Para llenar va{C}cíos
+Y me devuelves las ga{F}nas
+De {C/E}pensar en mi {Dm}delirio
+{Bb}amándote
+simplemente amán{C}dote
+{F}Te vivo
+
 
 Ustedes eligieron cómo debía sonar esta canción.
 
@@ -263,5 +307,6 @@ Hoy es suya.
 Escúchala, guárdala en tu biblioteca y sube tu baile etiquetándome.
 
 Enlace en mi perfil.`}
+
   ]
 }];
