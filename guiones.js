@@ -3,20 +3,22 @@
 window.PACKS = [{
   pack: 'Simplemente Amándote · noviembre',
   scripts: [
-{id:'sa-R01',title:'R1 · Lun 9 nov · Las dos versiones',text:
-`Me pidieron esta canción en son… y otros me la pidieron en bolero.
+{id:'sa-R01',rev:2,title:'R1 · Lun 9 nov · Las dos versiones',text:
+`Les pregunté si esta canción la querían en son o en bolero… y ustedes eligieron las dos.
 
-Cuando enseñé Simplemente Amándote, los comentarios se partieron en dos.
+Cuando les enseñé Simplemente Amándote, les pedí consejo.
 
-Unos querían son, para bailarla.
+Unos querían son para bailarla y otros querían bolero para dedicarla.
 
-Otros querían bolero, para dedicarla despacito.
+Así que hice las dos.
 
-Y yo no supe elegir… así que hice las dos.
+Ya terminé la mezcla del son en el estudio, y suena así:
 
-Ya terminé la mezcla en el estudio, y suena así.
+(4 segundos de la mezcla del son, sin guitarra en la mano)
 
-(Tocas 4 segundos de cada versión con la guitarra)
+El bolero todavía no está mezclado, pero suena así:
+
+(4 segundos del bolero)
 
 Ahora la pregunta es para ti: ¿cuál sale primero?
 
@@ -223,21 +225,21 @@ Son 5 segundos.
 
 Enlace en mi perfil.`},
 
-{id:'sa-R19',title:'R19 · Jue 3 dic · Mañana sale',text:
+{id:'sa-R19',rev:2,title:'R19 · Jue 3 dic · Mañana sale',text:
 `(En pantalla: «Mañana sale». Suenan 10 segundos del máster con tomas de estas semanas)
 
 Mañana sale.
 
-Gracias por pedirla, por votarla y por esperarla.
+Gracias por aconsejarme, por votar y por esperarla.
 
 Si todavía no la guardaste, el enlace está en mi perfil.`},
 
-{id:'sa-R20',title:'R20 · Vie 4 dic · Lanzamiento',text:
+{id:'sa-R20',rev:2,title:'R20 · Vie 4 dic · Lanzamiento',text:
 `Ya está. Simplemente Amándote ya está en Spotify.
 
 (Cantas el estribillo con el máster de fondo y tomas de la pareja bailando)
 
-Esta canción existe porque ustedes la pidieron.
+Ustedes eligieron cómo debía sonar esta canción.
 
 Hoy es suya.
 

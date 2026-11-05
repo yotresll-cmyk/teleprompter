@@ -208,7 +208,13 @@ let scripts=store.get('scripts',null)||[SAMPLE];
 (function mergePacks(){
   const packs=window.PACKS||[];const seen=store.get('seen',[]);let added=false;
   packs.forEach(pk=>pk.scripts.forEach(sc=>{
-    if(seen.includes(sc.id))return;seen.push(sc.id);
+    const revs=store.get('revs',{});
+    if(seen.includes(sc.id)){
+      if(sc.rev&&(revs[sc.id]||1)<sc.rev){const ex=scripts.find(x=>x.id===sc.id);
+        if(ex){ex.text=sc.text;ex.title=sc.title;added=true}
+        revs[sc.id]=sc.rev;store.set('revs',revs)}
+      return}
+    seen.push(sc.id);if(sc.rev){revs[sc.id]=sc.rev;store.set('revs',revs)}
     if(!scripts.find(x=>x.id===sc.id)){scripts.push({id:sc.id,title:sc.title,text:sc.text,pack:pk.pack});added=true}
   }));
   if(added){
