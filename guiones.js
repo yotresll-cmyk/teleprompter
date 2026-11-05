@@ -42,20 +42,14 @@ Esta es para los que me dijeron que esta canción era para dedicarla con los ojo
 
 El viernes hacemos el duelo.`},
 
-{id:'sa-R04',title:'R4 · Jue 12 nov · La historia',text:
-`¿Quién no se ha enamorado de su mejor amigo o amiga?
+{id:'sa-R04',rev:3,title:'R4 · Jue 12 nov · Escuchando la mezcla',text:
+`(Primer plano poniéndote los auriculares. Suena la mezcla del son 10–15 segundos mientras reaccionas. Luego, a cámara:)
 
-A todos nos ha pasado. A mí también.
+[El tiempo que llevas con ella] detrás de esta canción y por fin suena como la tenía en la cabeza.
 
-Y como no sabía cómo decírselo, se lo escribí en una canción.
+En tres semanas es suya.
 
-Empieza así:
-
-(Cantas con la guitarra: «Lo que yo siento cuando estoy contigo, no lo puedo controlar…»)
-
-¿Quieres saber cómo termina?
-
-Sígueme, que sale el 4 de diciembre.`},
+Sígueme en Spotify con el enlace de mi perfil para no perdértela.`},
 
 {id:'sa-R05',title:'R5 · Vie 13 nov · Duelo son vs bolero',text:
 `(Se monta con el R2 y el R3: 8 segundos de son y 8 de bolero, sin hablar. Luego, a cámara:)
@@ -104,14 +98,22 @@ El enlace está en mi perfil.
 
 Sale el 4 de diciembre.`},
 
-{id:'sa-R08',title:'R8 · Mié 18 nov · Escuchando la mezcla',text:
-`(Primer plano poniéndote los auriculares. Suena la mezcla del son 10–15 segundos mientras reaccionas. Luego, a cámara:)
+{id:'sa-R08',rev:3,title:'R8 · Mié 18 nov · La historia',text:
+`(Pantalla dividida: arriba tú hablando, abajo tus manos en la guitarra)
 
-[El tiempo que llevas con ella] detrás de esta canción y por fin suena como la tenía en la cabeza.
+¿Quién no se ha enamorado de su mejor amigo o amiga?
 
-En poco más de dos semanas es suya.
+A todos nos ha pasado. A mí también.
 
-Guárdala ya con el enlace de mi perfil.`},
+Y como no sabía cómo decírselo, se lo escribí en una canción.
+
+Empieza así:
+
+(Cantas con la guitarra: «Lo que yo siento cuando estoy contigo, no lo puedo controlar…»)
+
+¿Quieres saber cómo termina?
+
+Sígueme, que sale el 4 de diciembre.`},
 
 {id:'sa-R09',title:'R9 · Jue 19 nov · Versión de un clásico',text:
 `(Empiezas cantando la frase más conocida de [nombre del clásico]. 20 segundos con tu estilo. Luego, a cámara:)
