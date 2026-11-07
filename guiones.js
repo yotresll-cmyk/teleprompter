@@ -217,16 +217,24 @@ No hace falta que se lo digas.
 
 Mándale esto y que lo adivine.`},
 
-{id:'sa-R14',rev:2,title:'R14 · Jue 26 nov · Segunda versión de un clásico',text:
-`(Empiezas cantando la frase más conocida del clásico. 20 segundos con tu estilo. Luego, a cámara:)
+{id:'sa-R14',rev:3,title:'R14 · Jue 26 nov · La escena',text:
+`(Mini escena, sin hablar a cámara. 20–25 segundos. Suena el coro de Simplemente Amándote con el máster)
 
-Esta me la pidió [nombre].
+(Dos amigos en un café o en un sofá. Ella te cuenta algo, animada. Tú la miras sin escucharla)
 
-(Si nadie la pidió, quita la frase de arriba)
+(Texto en pantalla, una frase cada 3 segundos:)
 
-Si te gusta cómo suena el son en mi voz, el 4 de diciembre sale Simplemente Amándote.
+Cuando te enamoras de tu mejor amiga…
 
-Comenta AMOR y te mando el enlace.`},
+…y ella te cuenta su día como si nada.
+
+Y tú solo piensas una cosa:
+
+(Ella te mira de repente. Tú disimulas y sonríes. Justo ahí entra «simplemente amándote»)
+
+Simplemente Amándote · 4 de diciembre
+
+(Grábalo con luz de ventana, el móvil a la altura de la mesa. Publícalo como colaboración con ella para salir también en su perfil)`},
 
 {id:'sa-R15',rev:2,title:'R15 · Vie 27 nov · Lo que nunca le dije',text:
 `Esta parte de la canción no la ha escuchado nadie. Ni ella.
