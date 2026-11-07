@@ -170,16 +170,16 @@ Dale a Remix, cántalo conmigo y lo comparto en mis stories.
 
 El 4 de diciembre sale entera.`},
 
-{id:'sa-R12',rev:2,title:'R12 · Mar 24 nov · Mi historia',text:
+{id:'sa-R12',rev:3,title:'R12 · Mar 24 nov · Mi historia',text:
 `(Empiezas tocando el tres 3 segundos, sin hablar. En pantalla: «Toda la vida tocando para otros»)
 
 Empecé con la guitarra a los 7 años y con el tres a los 13.
 
 Estudié en la Escuela Nacional de Arte de La Habana.
 
-He tocado y grabado con Los Sabandeños, Mestisay, Kelvis Ochoa…
+Llevo toda la vida en escenarios y estudios, tocando y produciendo para otros.
 
-Siempre detrás, tocando para otros.
+Siempre detrás.
 
 Este año decidí cantar mis propias canciones.
 
