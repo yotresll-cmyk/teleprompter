@@ -210,7 +210,7 @@ Dale a Remix, cántalo conmigo y lo comparto en mis stories.
 
 El 4 de diciembre sale entera.`},
 
-{id:'sa-R12',rev:5,title:'R12 · Mar 24 nov · Mi historia',text:
+{id:'sa-R12',rev:6,title:'R12 · Mar 24 nov · Mi historia',text:
 `(Empiezas tocando el tres 3 segundos, sin hablar)
 
 Toda mi vida he tocado para otros.
@@ -235,7 +235,7 @@ Y tú me puedes ayudar a que sean muchas más.
 
 Sígueme en Spotify, que el enlace está en mi perfil.
 
-Y mándale este vídeo a alguien que de verdad quiera la buena música.
+Y mándale este vídeo a alguien a quien de verdad le guste la buena música.
 
 (Aparte, para ponerlo encima: fotos tuyas de pequeño con la guitarra, de la escuela, de conciertos y del estudio. Cuantas más, mejor)`},
 
