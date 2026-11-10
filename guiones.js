@@ -324,18 +324,16 @@ Etiquétame.
 
 Y lo comparto en mis stories.`},
 
-{id:'sa-R17',rev:3,title:'R17 · Mar 1 dic · El equipo',text:
+{id:'sa-R17',rev:4,title:'R17 · Mar 1 dic · El equipo',text:
 `Esta canción no la hice solo.
 
 (Tomas del estudio y de la mezcla)
 
-La mezcla: Adrián Vega, en su nuevo estudio.
+La mezcla y el máster: Adrián Vega, en su nuevo estudio.
 
-[Instrumento]: [Nombre].
+El bajo: Luis Alberto Gómez, Luisón.
 
-[Instrumento]: [Nombre].
-
-(Una línea por cada persona que participó)
+Las percusiones: Toto Noriega.
 
 La portada: [nombre del diseñador].
 
@@ -345,7 +343,7 @@ El viernes es de todos nosotros.
 
 Comenta AMOR y te mando el enlace.
 
-(Aparte, para ponerlo encima: una foto de cada persona, mejor si es en el estudio. Etiqueta a todos y pídeles por privado que lo compartan)`},
+(Los vídeos de Adrián, Luisón y Toto ya están en la carpeta MATERIAL R17. Etiqueta a todos y pídeles por privado que lo compartan)`},
 
 {id:'sa-R18',rev:3,title:'R18 · Mié 2 dic · Última llamada',text:
 `(Suena un fragmento del estribillo)
