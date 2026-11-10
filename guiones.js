@@ -409,4 +409,71 @@ Escúchala, guárdala en tu biblioteca y sube tu baile etiquetándome.
 Enlace en mi perfil.`}
 
   ]
-}];
+}
+,{
+  pack: 'Canciones · letra y acordes',
+  scripts: [
+{id:'song-simplemente-amandote',rev:1,title:'Simplemente Amándote · letra y acordes',text:
+`(Intro)
+(Acordes: F · C/E · Gm · Bb)
+
+(Estrofa)
+Lo que {F}yo siento cuando estoy {C/E}contigo
+No lo {Gm}puedo controlar {Bb}
+Lo que {F}yo vivo al tocar tu {C/E}cuerpo
+No lo {Gm}puedo explicar {Bb}
+
+(Pre coro)
+Está en mis {F}manos esta vez
+Dirigir los {C/E}hilos a {Gm}momentos de mi fe
+Que {Bb}convergen otra vez {F}contigo
+
+(Coro)
+{F}Y te conviertes en {Bb}luz cuando estás {C}conmigo
+Porque te abrigan mis {F}manos {C/E}convertidas en {Dm}alivio
+Y se derrama tu {Bb}voz para llenar {C}vacíos
+Y me devuelves las {F}ganas de {C/E}pensar en mi {Dm}delirio {Dm/C}
+{Bb}Amándote simplemente {C}amándote
+{F}Te vivo {C/E}
+
+(Instrumental)
+(Acordes: Gm · Bb)
+
+(Estrofa)
+Lo que en {F}ti fluye cuando estás {C/E}conmigo
+Se {Gm}convierte en {Bb}realidad
+Lo que {F}tú sientes aunque no lo {C}has {C/E}dicho
+Me lo {Gm}puedo {Bb}imaginar
+
+(Pre coro)
+Está en tus {F}manos otra vez
+Elegir {C/E}caminos {Gm}aprendiendo de la fe
+Que {Bb}conviven otra vez {F}contigo
+
+(Coro)
+{F}Y te conviertes {Bb}en luz cuando estás {C}conmigo
+Porque te abrigan mis {F}manos {C/E}convertidas en {Dm}alivio
+Y se derrama {Bb}tu voz para llenar {C}vacíos
+Y me devuelves las {F}ganas de {C/E}pensar en mi {Dm}delirio {Dm/C}
+{Bb}Amándote simplemente {C}amándote
+{F}Te vivo
+
+(Puente)
+{Eb}Y soy consciente de un {Bb}sueño
+Que no quiero {F}despertar
+{Eb}Como amigo te {Bb}amo
+Y eso nunca {C}cambiará
+
+(Coro final)
+{F}Y te conviertes en {Bb}luz cuando estás {C}conmigo
+Porque te abrigan mis {F}manos {C/E}convertidas en {Dm}alivio
+Y se derrama {Bb}tu voz para llenar {C}vacíos
+Y me devuelves las {F}ganas de {C/E}pensar en mi {Dm}delirio {Dm/C}
+{Bb}Amándote simplemente {C}amándote
+{F}Te vivo
+
+(Final instrumental)
+(Acordes: F)`}
+  ]
+}
+];
