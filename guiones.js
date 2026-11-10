@@ -210,38 +210,32 @@ Dale a Remix, cántalo conmigo y lo comparto en mis stories.
 
 El 4 de diciembre sale entera.`},
 
-{id:'sa-R12',rev:4,title:'R12 · Mar 24 nov · Mi historia',text:
+{id:'sa-R12',rev:5,title:'R12 · Mar 24 nov · Mi historia',text:
 `(Empiezas tocando el tres 3 segundos, sin hablar)
 
-Toda la vida tocando para otros.
+Toda mi vida he tocado para otros.
 
-7 años: mi primera guitarra.
+Empecé con la guitarra a los 7 años, y a los 13 me enamoré del tres cubano.
 
-13 años: el tres cubano.
+Estudié en la Escuela Nacional de Arte, allá en La Habana.
 
-Después, la Escuela Nacional de Arte de La Habana.
+Y desde entonces, escenarios, estudios, discos que les produje a otros artistas…
 
-Escenarios.
+Siempre ahí detrás, acompañando.
 
-Estudios.
+Pero este año dije: ya está, ahora me toca a mí.
 
-Discos que produje para otros artistas.
-
-Siempre detrás.
-
-Hasta este año.
-
-Este año decidí cantar mis propias canciones.
+Y empecé a cantar mis propias canciones.
 
 (Giro: enseñas a cámara la pantalla de tu Spotify con tus oyentes reales)
 
-Hoy me escuchan [tus oyentes mensuales] personas al mes.
+Ahora mismo me escuchan [tus oyentes mensuales] personas al mes.
 
-Con tu ayuda, eso puede cambiar.
+Y tú me puedes ayudar a que sean muchas más.
 
-Sígueme en Spotify con el enlace de mi perfil.
+Sígueme en Spotify, que el enlace está en mi perfil.
 
-Y envíale este vídeo a alguien que ame la buena música.
+Y mándale este vídeo a alguien que de verdad quiera la buena música.
 
 (Aparte, para ponerlo encima: fotos tuyas de pequeño con la guitarra, de la escuela, de conciertos y del estudio. Cuantas más, mejor)`},
 
