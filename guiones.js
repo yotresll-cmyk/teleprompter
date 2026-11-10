@@ -324,7 +324,7 @@ Etiquétame.
 
 Y lo comparto en mis stories.`},
 
-{id:'sa-R17',rev:4,title:'R17 · Mar 1 dic · El equipo',text:
+{id:'sa-R17',rev:5,title:'R17 · Mar 1 dic · El equipo',text:
 `Esta canción no la hice solo.
 
 (Tomas del estudio y de la mezcla)
@@ -335,7 +335,7 @@ El bajo: Luis Alberto Gómez, Luisón.
 
 Las percusiones: Toto Noriega.
 
-La portada: [nombre del diseñador].
+Las portadas: Juan Cat.
 
 La letra y la música… las mías.
 
@@ -343,7 +343,7 @@ El viernes es de todos nosotros.
 
 Comenta AMOR y te mando el enlace.
 
-(Los vídeos de Adrián, Luisón y Toto ya están en la carpeta MATERIAL R17. Etiqueta a todos y pídeles por privado que lo compartan)`},
+(Los vídeos de Adrián, Luisón y Toto, y la foto de Juan Cat, ya están en la carpeta MATERIAL R17. Etiqueta a todos y pídeles por privado que lo compartan)`},
 
 {id:'sa-R18',rev:3,title:'R18 · Mié 2 dic · Última llamada',text:
 `(Suena un fragmento del estribillo)
