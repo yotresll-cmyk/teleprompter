@@ -324,26 +324,24 @@ Etiquétame.
 
 Y lo comparto en mis stories.`},
 
-{id:'sa-R17',rev:5,title:'R17 · Mar 1 dic · El equipo',text:
+{id:'sa-R17',rev:6,title:'R17 · Mar 1 dic · El equipo',text:
 `Esta canción no la hice solo.
 
-(Tomas del estudio y de la mezcla)
+El bajo lo grabó Luis Alberto Gómez, Luisón.
 
-La mezcla y el máster: Adrián Vega, en su nuevo estudio.
+Las percusiones las puso Toto Noriega.
 
-El bajo: Luis Alberto Gómez, Luisón.
+La mezcla y el máster, Adrián Vega, en su estudio nuevo.
 
-Las percusiones: Toto Noriega.
+El diseño gráfico, Juan Carlos.
 
-Las portadas: Juan Cat.
-
-La letra y la música… las mías.
+Y la letra y la música son mías.
 
 El viernes es de todos nosotros.
 
 Comenta AMOR y te mando el enlace.
 
-(Los vídeos de Adrián, Luisón y Toto, y la foto de Juan Cat, ya están en la carpeta MATERIAL R17. Etiqueta a todos y pídeles por privado que lo compartan)`},
+(Los vídeos de Luisón, Toto y Adrián, y la foto de Juan Carlos, ya están en la carpeta MATERIAL R17. Etiqueta a todos y pídeles por privado que lo compartan)`},
 
 {id:'sa-R18',rev:3,title:'R18 · Mié 2 dic · Última llamada',text:
 `(Suena un fragmento del estribillo)
