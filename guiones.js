@@ -42,7 +42,7 @@ Esta es para los que me dijeron que esta canción era para dedicarla con los ojo
 
 El viernes hacemos el duelo.`},
 
-{id:'sa-R04',rev:5,title:'R4 · Jue 12 nov · Escuchando la mezcla',text:
+{id:'sa-R04',rev:6,title:'R4 · Jue 12 nov · Escuchando la mezcla',text:
 `(Empieza ya sonando la mezcla del son, fuerte, con tus manos en primer plano. A los 3 segundos la cámara se aleja y te ves con los auriculares, reaccionando)
 
 Es la primera vez que escucho la mezcla terminada.
@@ -61,7 +61,9 @@ Y por fin suena como la tenía en la cabeza.
 
 En tres semanas es suya.
 
-Comenta AMOR y te mando el enlace para que no te la pierdas.
+¿Son o bolero?
+
+Comenta SON o BOLERO y te mando el enlace para que no te la pierdas.
 
 (Aparte, para ponerlo encima: una foto o un vídeo corto del estudio con Adrián, y una captura de la canción en el ordenador o en el móvil)`},
 
