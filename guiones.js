@@ -161,12 +161,22 @@ Si te gusta esta, el 4 de diciembre sale una mía que va por el mismo camino: Si
 
 Dime en comentarios qué clásico quieres que cante la próxima.`},
 
-{id:'sa-R10',rev:4,title:'R10 · Vie 20 nov · Dame un sí',text:
-`Esta canción tiene más de 32.000 escuchas…
+{id:'sa-R10',rev:5,title:'R10 · Vie 20 nov · Dame un sí',text:
+`R10
+
+Esta canción tiene más de 32.000 escuchas…
 
 …y casi nadie aquí la conoce.
 
-(Cantas el estribillo de Dame un sí con la guitarra. Comprueba antes la cifra en Spotify)
+(Cantas el precoro de Dame un sí con la guitarra)
+
+Quiero verte {D}un poquito {A/C#}más
+{Bm}Después un {Bm/A}café
+{G}Sé que tú también {D/F#}quieres
+Porque {Em9}se te {F#}ve
+Disfrutemos de esta {Bm}historia de amor
+{Bm/A}Imposible pero {E/G#}es nuestra, {A11}corazón
+
 
 Se llama Dame un sí.
 
