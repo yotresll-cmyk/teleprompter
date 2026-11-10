@@ -42,27 +42,45 @@ Esta es para los que me dijeron que esta canción era para dedicarla con los ojo
 
 El viernes hacemos el duelo.`},
 
-{id:'sa-R04',rev:4,title:'R4 · Jue 12 nov · Escuchando la mezcla',text:
+{id:'sa-R04',rev:5,title:'R4 · Jue 12 nov · Escuchando la mezcla',text:
 `(Empieza ya sonando la mezcla del son, fuerte, con tus manos en primer plano. A los 3 segundos la cámara se aleja y te ves con los auriculares, reaccionando)
 
-(En pantalla: «Primera vez que escucho la mezcla terminada»)
+Es la primera vez que escucho la mezcla terminada.
 
-[El tiempo que llevas con ella] detrás de esta canción y por fin suena como la tenía en la cabeza.
+(Deja sonar la mezcla 5 segundos y reacciona)
+
+[El tiempo que llevas con ella] con esta canción.
+
+Escribiéndola.
+
+Grabándola.
+
+Mezclándola.
+
+Y por fin suena como la tenía en la cabeza.
 
 En tres semanas es suya.
 
-Comenta AMOR y te mando el enlace para que no te la pierdas.`},
+Comenta AMOR y te mando el enlace para que no te la pierdas.
 
-{id:'sa-R05',title:'R5 · Vie 13 nov · Duelo son vs bolero',text:
+(Aparte, para ponerlo encima: una foto o un vídeo corto del estudio con Adrián, y una captura de la canción en el ordenador o en el móvil)`},
+
+{id:'sa-R05',rev:2,title:'R5 · Vie 13 nov · Duelo son vs bolero',text:
 `(Se monta con el R2 y el R3: 8 segundos de son y 8 de bolero, sin hablar. Luego, a cámara:)
 
-Llevo toda la semana leyendo sus comentarios y está reñido.
+¿Son… o bolero?
+
+Llevo toda la semana leyendo sus comentarios.
+
+Y está reñido.
 
 Ustedes deciden cuál sale primero.
 
-Vota en comentarios y compárteselo a alguien para que vote también.
+Vota en comentarios: SON o BOLERO.
 
-El lunes digo quién ganó… y la fecha.`},
+Y compártelo con alguien para que vote también.
+
+El lunes digo quién ganó.`},
 
 {id:'sa-R06',title:'R6 · Lun 16 nov · Ganador y fecha',text:
 `Ustedes votaron y ganó…
@@ -83,22 +101,34 @@ Así te llega sola el día 4.
 
 (Si gana el bolero, empieza así: «Está reñido, así que salen las dos: primero el son el 4 y el bolero el 18 de diciembre.»)`},
 
-{id:'sa-R07',rev:2,title:'R7 · Mar 17 nov · Qué es un pre-save',text:
-`Hay un botón que tarda 5 segundos y a un artista independiente le cambia la vida.
+{id:'sa-R07',rev:3,title:'R7 · Mar 17 nov · Qué es un pre-save',text:
+`Hay un botón de 5 segundos que le cambia la vida a un artista independiente.
 
 Se llama pre-save.
 
-Le das antes de que salga la canción, y el día del lanzamiento aparece sola en tu biblioteca de Spotify.
+Te lo explico en 3 pasos.
 
-Para ti son 5 segundos.
+Paso 1: comenta AMOR y te mando el enlace.
 
-Para mí es la diferencia entre que Spotify enseñe mi canción a gente nueva… o que nadie se entere.
+Paso 2: tocas «Pre-save» y eliges Spotify.
 
-(Aparte: graba la pantalla del móvil haciendo el pre-save)
+Paso 3: no haces nada más.
+
+El día que sale, la canción aparece sola en tu biblioteca.
+
+¿Y para mí qué cambia?
+
+Que Spotify ve que la gente la espera…
+
+…y se la enseña a gente nueva.
+
+5 segundos para ti.
+
+Un empujón enorme para mí.
 
 Comenta AMOR y te lo mando por privado.
 
-Sale el 4 de diciembre.`},
+(Aparte, para ponerlo encima de cada paso: graba la pantalla del móvil haciendo el pre-save)`},
 
 {id:'sa-R08',rev:4,title:'R8 · Mié 18 nov · La historia',text:
 `(Pantalla dividida: arriba tú hablando, abajo tus manos en la guitarra)
@@ -129,20 +159,28 @@ Si te gusta esta, el 4 de diciembre sale una mía que va por el mismo camino: Si
 
 Dime en comentarios qué clásico quieres que cante la próxima.`},
 
-{id:'sa-R10',rev:2,title:'R10 · Vie 20 nov · Dame un sí',text:
-`Esta canción tiene más de 24.000 escuchas y casi nadie de aquí la conoce.
+{id:'sa-R10',rev:3,title:'R10 · Vie 20 nov · Dame un sí',text:
+`Esta canción tiene más de 24.000 escuchas…
+
+…y casi nadie aquí la conoce.
 
 (Cantas el estribillo de Dame un sí con la guitarra. Comprueba antes la cifra en Spotify)
 
-Si te gusta Simplemente Amándote, esta es su hermana mayor.
+Se llama Dame un sí.
 
-Está en Spotify, junto con Quedarme en tus besos.
+Es la hermana mayor de Simplemente Amándote.
 
-(Aparte: graba la pantalla de tu perfil de Spotify)
+Y está en Spotify, junto con Quedarme en tus besos.
 
-Escúchala y dale a seguir en Spotify: así el 4 de diciembre te llega la nueva.
+Escúchala.
 
-Y envíasela a esa persona que te dijo que sí.`},
+Dale a seguir.
+
+Y la nueva te llegará sola el día que salga.
+
+Envíasela a esa persona que te dijo que sí.
+
+(Aparte, para ponerlo encima: graba la pantalla de tu perfil de Spotify con las canciones)`},
 
 {id:'sa-R11',rev:2,title:'R11 · Lun 23 nov · Canta conmigo',text:
 `Te dejo el estribillo para que lo cantes conmigo.
@@ -170,16 +208,26 @@ Dale a Remix, cántalo conmigo y lo comparto en mis stories.
 
 El 4 de diciembre sale entera.`},
 
-{id:'sa-R12',rev:3,title:'R12 · Mar 24 nov · Mi historia',text:
-`(Empiezas tocando el tres 3 segundos, sin hablar. En pantalla: «Toda la vida tocando para otros»)
+{id:'sa-R12',rev:4,title:'R12 · Mar 24 nov · Mi historia',text:
+`(Empiezas tocando el tres 3 segundos, sin hablar)
 
-Empecé con la guitarra a los 7 años y con el tres a los 13.
+Toda la vida tocando para otros.
 
-Estudié en la Escuela Nacional de Arte de La Habana.
+7 años: mi primera guitarra.
 
-Llevo toda la vida en escenarios y estudios, tocando y produciendo para otros.
+13 años: el tres cubano.
+
+Después, la Escuela Nacional de Arte de La Habana.
+
+Escenarios.
+
+Estudios.
+
+Discos que produje para otros artistas.
 
 Siempre detrás.
+
+Hasta este año.
 
 Este año decidí cantar mis propias canciones.
 
@@ -187,9 +235,13 @@ Este año decidí cantar mis propias canciones.
 
 Hoy me escuchan [tus oyentes mensuales] personas al mes.
 
-El 4 de diciembre sale Simplemente Amándote, y con tu ayuda eso puede cambiar.
+Con tu ayuda, eso puede cambiar.
 
-Sígueme en Spotify con el enlace de mi perfil y envíale este vídeo a alguien que ame la buena música.`},
+Sígueme en Spotify con el enlace de mi perfil.
+
+Y envíale este vídeo a alguien que ame la buena música.
+
+(Aparte, para ponerlo encima: fotos tuyas de pequeño con la guitarra, de la escuela, de conciertos y del estudio. Cuantas más, mejor)`},
 
 {id:'sa-R13',rev:4,title:'R13 · Mié 25 nov · Dedicatoria',text:
 `Etiqueta a ese amigo o amiga del que te enamoraste.
@@ -253,51 +305,79 @@ El resto, el viernes 4 de diciembre.
 
 Guárdala ya en el enlace de mi perfil.`},
 
-{id:'sa-R16',title:'R16 · Lun 30 nov · Aprende el paso',text:
+{id:'sa-R16',rev:2,title:'R16 · Lun 30 nov · Aprende el paso',text:
 `(15 segundos de la pareja bailando con el máster. Al final apareces tú:)
 
-El viernes sale. Quiero ver cómo la bailan ustedes.
+El viernes sale.
 
-El día 4, sube tu baile con la canción y etiquétame.
+Y quiero ver cómo la bailas tú.
 
-Comparto todos en mis stories.`},
+Sube tu baile el día 4 con la canción.
 
-{id:'sa-R17',rev:2,title:'R17 · Mar 1 dic · El equipo',text:
+Etiquétame.
+
+Y lo comparto en mis stories.`},
+
+{id:'sa-R17',rev:3,title:'R17 · Mar 1 dic · El equipo',text:
 `Esta canción no la hice solo.
 
 (Tomas del estudio y de la mezcla)
 
-Adrian Vega la mezcló en su nuevo estudio.
+La mezcla: Adrián Vega, en su nuevo estudio.
 
-[Nombre] grabó [instrumento].
+[Instrumento]: [Nombre].
 
-[Nombra a cada persona que participó]
+[Instrumento]: [Nombre].
+
+(Una línea por cada persona que participó)
+
+La portada: [nombre del diseñador].
+
+La letra y la música… las mías.
 
 El viernes es de todos nosotros.
 
 Comenta AMOR y te mando el enlace.
 
-(Etiqueta a todos y pídeles por privado que lo compartan)`},
+(Aparte, para ponerlo encima: una foto de cada persona, mejor si es en el estudio. Etiqueta a todos y pídeles por privado que lo compartan)`},
 
-{id:'sa-R18',rev:2,title:'R18 · Mié 2 dic · Última llamada',text:
-`(En pantalla, grande: «Faltan 2 días». Suena un fragmento del estribillo)
+{id:'sa-R18',rev:3,title:'R18 · Mié 2 dic · Última llamada',text:
+`(Suena un fragmento del estribillo)
 
-Si alguna vez te gustó un vídeo mío, este es el momento de ayudarme: dale al pre-save.
+Faltan 2 días.
+
+Si alguna vez te gustó un vídeo mío…
+
+…este es el momento de ayudarme.
 
 Son 5 segundos.
 
-Comenta AMOR y te mando el enlace.
+Comenta AMOR.
 
-Y compártelo con alguien que la vaya a escuchar.`},
+Te mando el enlace.
 
-{id:'sa-R19',rev:3,title:'R19 · Jue 3 dic · Mañana sale',text:
-`(En pantalla: «Mañana sale». Suenan 10 segundos del máster con tomas de estas semanas)
+Le das al pre-save.
+
+Y el viernes te llega sola.
+
+Compártelo con alguien que la vaya a escuchar.`},
+
+{id:'sa-R19',rev:4,title:'R19 · Jue 3 dic · Mañana sale',text:
+`(Suenan 10 segundos del máster con tomas de estas semanas)
 
 Mañana sale.
 
-Gracias por aconsejarme, por votar y por esperarla.
+Ustedes me aconsejaron.
 
-Si todavía no la guardaste, comenta AMOR y te mando el enlace.`},
+Ustedes votaron.
+
+Ustedes la esperaron.
+
+Gracias.
+
+Si todavía no la guardaste…
+
+…comenta AMOR y te mando el enlace.`},
 
 {id:'sa-R20',rev:3,title:'R20 · Vie 4 dic · Lanzamiento',text:
 `Ya está. Simplemente Amándote ya está en Spotify.
