@@ -161,8 +161,8 @@ Si te gusta esta, el 4 de diciembre sale una mía que va por el mismo camino: Si
 
 Dime en comentarios qué clásico quieres que cante la próxima.`},
 
-{id:'sa-R10',rev:3,title:'R10 · Vie 20 nov · Dame un sí',text:
-`Esta canción tiene más de 24.000 escuchas…
+{id:'sa-R10',rev:4,title:'R10 · Vie 20 nov · Dame un sí',text:
+`Esta canción tiene más de 32.000 escuchas…
 
 …y casi nadie aquí la conoce.
 
@@ -210,7 +210,7 @@ Dale a Remix, cántalo conmigo y lo comparto en mis stories.
 
 El 4 de diciembre sale entera.`},
 
-{id:'sa-R12',rev:6,title:'R12 · Mar 24 nov · Mi historia',text:
+{id:'sa-R12',rev:7,title:'R12 · Mar 24 nov · Mi historia',text:
 `(Empiezas tocando el tres 3 segundos, sin hablar)
 
 Toda mi vida he tocado para otros.
@@ -229,7 +229,7 @@ Y empecé a cantar mis propias canciones.
 
 (Giro: enseñas a cámara la pantalla de tu Spotify con tus oyentes reales)
 
-Ahora mismo me escuchan [tus oyentes mensuales] personas al mes.
+Ahora mismo me escuchan 730 personas al mes.
 
 Y tú me puedes ayudar a que sean muchas más.
 
