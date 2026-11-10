@@ -378,7 +378,23 @@ async function countdown(){
   for(let i=n;i>0;i--){el.textContent=i;await new Promise(r=>setTimeout(r,1000))}
   el.hidden=true;
 }
+/* Audio en MONO centrado: el micro del iPhone llega solo por el canal izquierdo.
+   Se copia ese canal a los dos lados antes de grabar (si algo falla, se graba el micro tal cual). */
+let actx=null,monoNodes=null;
+function wakeAudio(){try{actx=actx||new (window.AudioContext||window.webkitAudioContext)();if(actx.state!=='running')actx.resume()}catch(e){actx=null}}
+function monoTracks(){
+  try{
+    if(!actx)return mic.getAudioTracks();
+    if(monoNodes)monoNodes.forEach(n=>{try{n.disconnect()}catch(e){}});
+    const src=actx.createMediaStreamSource(new MediaStream(mic.getAudioTracks()));
+    const sp=actx.createChannelSplitter(2),mg=actx.createChannelMerger(2),d=actx.createMediaStreamDestination();
+    src.connect(sp);sp.connect(mg,0,0);sp.connect(mg,0,1);mg.connect(d);
+    monoNodes=[src,sp,mg];
+    return d.stream.getAudioTracks();
+  }catch(e){return mic.getAudioTracks()}
+}
 async function startRec(){
+  wakeAudio();
   if(!stream)return openCam();
   if(practicing)stopPractice();
   $('rec').disabled=true;
@@ -386,7 +402,7 @@ async function startRec(){
   if(!okMic){$('rec').disabled=false;return showErr('No puedo usar el micrófono. Revisa en Ajustes › Safari › Micrófono que esté permitido y vuelve a intentarlo.')}
   await countdown();
   const type=pickType();
-  const out=new MediaStream([...view.captureStream(30).getVideoTracks(),...mic.getAudioTracks()]);
+  const out=new MediaStream([...view.captureStream(30).getVideoTracks(),...monoTracks()]);
   try{rec=new MediaRecorder(out,{mimeType:type||undefined,videoBitsPerSecond:cfg.q===2160?24e6:10e6,audioBitsPerSecond:192000})}
   catch(e){rec=new MediaRecorder(out)}
   chunks=[];
