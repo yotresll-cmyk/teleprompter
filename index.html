@@ -223,6 +223,9 @@ Y cuéntame en los comentarios qué te ha parecido.
 let scripts=store.get('scripts',null)||[SAMPLE];
 (function mergePacks(){
   const packs=window.PACKS||[];const seen=store.get('seen',[]);let added=false;
+  const clear=window.CLEAR||{packs:[],prefixes:[]};const nBefore=scripts.length;
+  scripts=scripts.filter(x=>!((clear.packs||[]).includes(x.pack)||(clear.prefixes||[]).some(p=>String(x.id).startsWith(p))));
+  if(scripts.length!==nBefore){added=true;if(!scripts.length)scripts=[SAMPLE]}
   packs.forEach(pk=>pk.scripts.forEach(sc=>{
     const revs=store.get('revs',{});
     if(seen.includes(sc.id)){

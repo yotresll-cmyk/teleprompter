@@ -1,211 +1,51 @@
-/* Guiones a cámara del Plan de Instagram de noviembre — Simplemente Amándote.
-   Las líneas entre paréntesis son indicaciones (no se leen); lo que va entre [corchetes] hay que cambiarlo por tu dato real. */
+/* Guiones a cámara de diciembre, en orden de rodaje. Las líneas entre paréntesis son indicaciones (no se leen); lo que va entre [corchetes] hay que cambiarlo por tu dato real. */
+window.CLEAR = {packs:['Simplemente Amándote · noviembre'], prefixes:['sa-R']};
 window.PACKS = [{
-  pack: 'Simplemente Amándote · noviembre',
+  pack: 'Diciembre · orden de rodaje',
   scripts: [
-{id:'sa-R01',rev:2,title:'R1 · Lun 9 nov · Las dos versiones',text:
-`Les pregunté si esta canción la querían en son o en bolero… y ustedes eligieron las dos.
+{id:'dic-R24',rev:1,title:'R24 · Jue 10 dic · La misma frase en 3 estilos',text:
+`R24
 
-Cuando les enseñé Simplemente Amándote, les pedí consejo.
+La misma frase, en tres estilos. Quédate hasta el tercero.
 
-Unos querían son para bailarla y otros querían bolero para dedicarla.
-
-Así que hice las dos.
-
-Ya terminé la mezcla del son en el estudio, y suena así:
-
-(4 segundos de la mezcla del son, sin guitarra en la mano)
-
-El bolero todavía no está mezclado, pero suena así:
-
-(4 segundos del bolero)
-
-Ahora la pregunta es para ti: ¿cuál sale primero?
-
-Escríbeme SON o BOLERO en los comentarios.`},
-
-{id:'sa-R02',title:'R2 · Mar 10 nov · Versión son',text:
-`(Empiezas cantando el estribillo en son, sin saludar. 15–20 segundos con el tumbao)
-
-Esta es para los que me dijeron que esta canción tenía que bailarse.
-
-Si eres del equipo son, déjame un SON aquí abajo.
-
-Y sígueme, que mañana viene el bolero.`},
-
-{id:'sa-R03',title:'R3 · Mié 11 nov · Versión bolero',text:
-`(Empiezas cantando la misma frase que en el R2, pero lenta. 15–20 segundos en bolero, más cerca de la cámara)
-
-Esta es para los que me dijeron que esta canción era para dedicarla con los ojos cerrados.
-
-¿Eres de bolero? Déjame un BOLERO en comentarios.
-
-El viernes hacemos el duelo.`},
-
-{id:'sa-R04',rev:6,title:'R4 · Jue 12 nov · Escuchando la mezcla',text:
-`(Empieza ya sonando la mezcla del son, fuerte, con tus manos en primer plano. A los 3 segundos la cámara se aleja y te ves con los auriculares, reaccionando)
-
-Es la primera vez que escucho la mezcla terminada.
-
-(Deja sonar la mezcla 5 segundos y reacciona)
-
-[El tiempo que llevas con ella] con esta canción.
-
-Escribiéndola.
-
-Grabándola.
-
-Mezclándola.
-
-Y por fin suena como la tenía en la cabeza.
-
-En tres semanas es suya.
-
-¿Son o bolero?
-
-Comenta SON o BOLERO y te mando el enlace para que no te la pierdas.
-
-(Aparte, para ponerlo encima: una foto o un vídeo corto del estudio con Adrián, y una captura de la canción en el ordenador o en el móvil)`},
-
-{id:'sa-R05',rev:2,title:'R5 · Vie 13 nov · Duelo son vs bolero',text:
-`(Se monta con el R2 y el R3: 8 segundos de son y 8 de bolero, sin hablar. Luego, a cámara:)
-
-¿Son… o bolero?
-
-Llevo toda la semana leyendo sus comentarios.
-
-Y está reñido.
-
-Ustedes deciden cuál sale primero.
-
-Vota en comentarios: SON o BOLERO.
-
-Y compártelo con alguien para que vote también.
-
-El lunes digo quién ganó.`},
-
-{id:'sa-R06',title:'R6 · Lun 16 nov · Ganador y fecha',text:
-`Ustedes votaron y ganó…
-
-(Pausa de un segundo)
-
-…¡el son!
-
-Así que Simplemente Amándote sale primero en son, y ya tiene fecha: el viernes 4 de diciembre.
-
-Y los del bolero, tranquilos: su versión llega el 18 de diciembre, justo antes de Navidad.
-
-(Cantas 5 segundos del son para celebrar)
-
-En mi perfil tienes el enlace para guardarla antes de que salga.
-
-Así te llega sola el día 4.
-
-(Si gana el bolero, empieza así: «Está reñido, así que salen las dos: primero el son el 4 y el bolero el 18 de diciembre.»)`},
-
-{id:'sa-R07',rev:3,title:'R7 · Mar 17 nov · Qué es un pre-save',text:
-`Hay un botón de 5 segundos que le cambia la vida a un artista independiente.
-
-Se llama pre-save.
-
-Te lo explico en 3 pasos.
-
-Paso 1: comenta AMOR y te mando el enlace.
-
-Paso 2: tocas «Pre-save» y eliges Spotify.
-
-Paso 3: no haces nada más.
-
-El día que sale, la canción aparece sola en tu biblioteca.
-
-¿Y para mí qué cambia?
-
-Que Spotify ve que la gente la espera…
-
-…y se la enseña a gente nueva.
-
-5 segundos para ti.
-
-Un empujón enorme para mí.
-
-Comenta AMOR y te lo mando por privado.
-
-(Aparte, para ponerlo encima de cada paso: graba la pantalla del móvil haciendo el pre-save)`},
-
-{id:'sa-R08',rev:4,title:'R8 · Mié 18 nov · La historia',text:
-`(Pantalla dividida: arriba tú hablando, abajo tus manos en la guitarra)
-
-¿Quién no se ha enamorado de su mejor amigo o amiga?
-
-A todos nos ha pasado. A mí también.
-
-Y como no sabía cómo decírselo, se lo escribí en una canción.
-
-Empieza así:
-
-(Cantas con la guitarra)
-
-{F}Lo que yo siento
-Cuando estoy con{C/E}tigo
-No lo {Gm}puedo contro{Bb}lar
-
-
-¿Quieres saber cómo termina?
-
-Sígueme, que sale el 4 de diciembre.`},
-
-{id:'sa-R09',title:'R9 · Jue 19 nov · Versión de un clásico',text:
-`(Empiezas cantando la frase más conocida de [nombre del clásico]. 20 segundos con tu estilo. Luego, a cámara:)
-
-Si te gusta esta, el 4 de diciembre sale una mía que va por el mismo camino: Simplemente Amándote.
-
-Dime en comentarios qué clásico quieres que cante la próxima.`},
-
-{id:'sa-R10',rev:5,title:'R10 · Vie 20 nov · Dame un sí',text:
-`R10
-
-Esta canción tiene más de 32.000 escuchas…
-
-…y casi nadie aquí la conoce.
-
-(Cantas el precoro de Dame un sí con la guitarra)
-
-Quiero verte {D}un poquito {A/C#}más
-{Bm}Después un {Bm/A}café
-{G}Sé que tú también {D/F#}quieres
-Porque {Em9}se te {F#}ve
-Disfrutemos de esta {Bm}historia de amor
-{Bm/A}Imposible pero {E/G#}es nuestra, {A11}corazón
-
-
-Se llama Dame un sí.
-
-Es la hermana mayor de Simplemente Amándote.
-
-Y está en Spotify, junto con Quedarme en tus besos.
-
-Escúchala.
-
-Dale a seguir.
-
-Y la nueva te llegará sola el día que salga.
-
-Envíasela a esa persona que te dijo que sí.
-
-(Aparte, para ponerlo encima: graba la pantalla de tu perfil de Spotify con las canciones)`},
-
-{id:'sa-R11',rev:2,title:'R11 · Lun 23 nov · Canta conmigo',text:
-`Te dejo el estribillo para que lo cantes conmigo.
-
-(Cantas tú esta primera mitad)
+(Uno: en son, con tumbao)
 
 Y te conviertes en {Bb}luz
 Cuando estás {C}conmigo
 Porque te abrigan mis ma{F}nos
 Conver{C/E}tidas en a{Dm}livio
 
+(Dos: en bolero, lento, más cerca de la cámara)
 
-(Esta segunda mitad la tocas solo con la guitarra, sin cantar: la canta la gente)
+Y te conviertes en {Bb}luz
+Cuando estás {C}conmigo
+Porque te abrigan mis ma{F}nos
+Conver{C/E}tidas en a{Dm}livio
+
+(Tres: en tu estilo urbano o bachata, como la sientas)
+
+Y te conviertes en {Bb}luz
+Cuando estás {C}conmigo
+Porque te abrigan mis ma{F}nos
+Conver{C/E}tidas en a{Dm}livio
+
+¿Uno, dos o tres? Dímelo en comentarios.
+
+El uno ya está en Spotify. El dos llega por Navidad.
+
+Comenta SON y te mando la que ya salió.`},
+
+{id:'dic-R27',rev:1,title:'R27 · Mar 15 dic · Para dedicar en Nochebuena',text:
+`R27
+
+Si este año vas a dedicarle una canción a alguien en Nochebuena… que sea esta.
+
+(Cantas el coro en bolero, muy despacio, cerca de la cámara)
+
+Y te conviertes en {Bb}luz
+Cuando estás {C}conmigo
+Porque te abrigan mis ma{F}nos
+Conver{C/E}tidas en a{Dm}livio
 
 Y se derrama tu {Bb}voz
 Para llenar va{C}cíos
@@ -215,52 +55,34 @@ De {C/E}pensar en mi {Dm}delirio
 simplemente amán{C}dote
 {F}Te vivo
 
+Mándasela a esa persona. Ya.
 
-Dale a Remix, cántalo conmigo y lo comparto en mis stories.
+Sale esta semana. Comenta BOLERO y te aviso.`},
 
-El 4 de diciembre sale entera.`},
+{id:'dic-R29',rev:1,title:'R29 · Jue 17 dic · Mañana',text:
+`R29
 
-{id:'sa-R12',rev:7,title:'R12 · Mar 24 nov · Mi historia',text:
-`(Empiezas tocando el tres 3 segundos, sin hablar)
+Mañana.
 
-Toda mi vida he tocado para otros.
+(Cantas una sola frase en bolero)
 
-Empecé con la guitarra a los 7 años, y a los 13 me enamoré del tres cubano.
+{Bb}Amándote, simplemente {C}amándote
 
-Estudié en la Escuela Nacional de Arte, allá en La Habana.
+Simplemente Amándote, versión bolero. Mañana en Spotify.
 
-Y desde entonces, escenarios, estudios, discos que les produje a otros artistas…
+Comenta BOLERO y te la mando en cuanto salga.`},
 
-Siempre ahí detrás, acompañando.
+{id:'dic-R30',rev:1,title:'R30 · Vie 18 dic · Lanzamiento del bolero',text:
+`R30
 
-Pero este año dije: ya está, ahora me toca a mí.
+Ya está. La versión bolero ya está en Spotify.
 
-Y empecé a cantar mis propias canciones.
-
-(Giro: enseñas a cámara la pantalla de tu Spotify con tus oyentes reales)
-
-Ahora mismo me escuchan 730 personas al mes.
-
-Y tú me puedes ayudar a que sean muchas más.
-
-Sígueme en Spotify, que el enlace está en mi perfil.
-
-Y mándale este vídeo a alguien a quien de verdad le guste la buena música.
-
-(Aparte, para ponerlo encima: fotos tuyas de pequeño con la guitarra, de la escuela, de conciertos y del estudio. Cuantas más, mejor)`},
-
-{id:'sa-R13',rev:4,title:'R13 · Mié 25 nov · Dedicatoria',text:
-`Etiqueta a ese amigo o amiga del que te enamoraste.
-
-Yo ya lo hice con una canción.
-
-(Coro mirando a cámara. Los acordes van en azul, encima de la letra)
+(Cantas el coro con el máster del bolero de fondo)
 
 Y te conviertes en {Bb}luz
 Cuando estás {C}conmigo
 Porque te abrigan mis ma{F}nos
 Conver{C/E}tidas en a{Dm}livio
-
 
 Y se derrama tu {Bb}voz
 Para llenar va{C}cíos
@@ -270,49 +92,40 @@ De {C/E}pensar en mi {Dm}delirio
 simplemente amán{C}dote
 {F}Te vivo
 
+Ahora ya tienen las dos: una para bailarla y otra para dedicarla.
 
-No hace falta que se lo digas.
+¿Cuál vas a poner en Navidad?
 
-Mándale esto y que lo adivine.`},
+Comenta SON o BOLERO y te mando la tuya.`},
 
-{id:'sa-R14',rev:3,title:'R14 · Jue 26 nov · La escena',text:
-`(Mini escena, sin hablar a cámara. 20–25 segundos. Suena el coro de Simplemente Amándote con el máster)
+{id:'dic-R37',rev:1,title:'R37 · Mié 30 dic · Pon esto en tu fiesta',text:
+`R37
 
-(Dos amigos en un café o en un sofá. Ella te cuenta algo, animada. Tú la miras sin escucharla)
+Mañana es Nochevieja. Si en tu fiesta nadie baila… pon esta.
 
-(Texto en pantalla, una frase cada 3 segundos:)
+(Cantas el coro en son, con energía de fiesta)
 
-Cuando te enamoras de tu mejor amiga…
+Y te conviertes en {Bb}luz
+Cuando estás {C}conmigo
+Porque te abrigan mis ma{F}nos
+Conver{C/E}tidas en a{Dm}livio
 
-…y ella te cuenta su día como si nada.
+Y se derrama tu {Bb}voz
+Para llenar va{C}cíos
+Y me devuelves las ga{F}nas
+De {C/E}pensar en mi {Dm}delirio
+{Bb}amándote
+simplemente amán{C}dote
+{F}Te vivo
 
-Y tú solo piensas una cosa:
+Guárdala en tu lista de fiesta.
 
-(Ella te mira de repente. Tú disimulas y sonríes. Justo ahí entra «simplemente amándote»)
+Comenta SON y te la mando.`},
 
-Simplemente Amándote · 4 de diciembre
+{id:'dic-R16',rev:1,title:'R16 · Lun 30 nov · Aprende el paso (pareja con IA)',text:
+`R16
 
-(Grábalo con luz de ventana, el móvil a la altura de la mesa. Publícalo como colaboración con ella para salir también en su perfil)`},
-
-{id:'sa-R15',rev:2,title:'R15 · Vie 27 nov · Lo que nunca le dije',text:
-`Esta parte de la canción no la ha escuchado nadie. Ni ella.
-
-(Cantas el puente, muy íntimo)
-
-{Eb}Soy consciente de un {Bb}sueño
-Que no quiero desper{F}tar
-Como amigo te amo
-Y eso nunca cambia{C}rá
-
-
-(Un segundo de silencio mirando a cámara)
-
-El resto, el viernes 4 de diciembre.
-
-Guárdala ya en el enlace de mi perfil.`},
-
-{id:'sa-R16',rev:2,title:'R16 · Lun 30 nov · Aprende el paso',text:
-`(15 segundos de la pareja bailando con el máster. Al final apareces tú:)
+(15 segundos de la pareja bailando, hecha con IA, con el máster. Al final apareces tú:)
 
 El viernes sale.
 
@@ -324,90 +137,233 @@ Etiquétame.
 
 Y lo comparto en mis stories.`},
 
-{id:'sa-R17',rev:6,title:'R17 · Mar 1 dic · El equipo',text:
-`Esta canción no la hice solo.
+{id:'dic-R22',rev:1,title:'R22 · Mar 8 dic · 3 pasos para bailar son',text:
+`R22
 
-El bajo lo grabó Luis Alberto Gómez, Luisón.
+Si no sabes bailar son, dame 15 segundos.
 
-Las percusiones las puso Toto Noriega.
+Paso 1: el básico.
 
-La mezcla y el máster, Adrián Vega, en su estudio nuevo.
+(Lo enseñas como lo bailas tú, despacio)
 
-El diseño gráfico, Juan Carlos.
+Paso 2: la vuelta.
 
-Y la letra y la música son mías.
+(La enseñas)
 
-El viernes es de todos nosotros.
+Paso 3: el sabor. Los hombros y la cara.
 
-Comenta AMOR y te mando el enlace.
+(Lo enseñas, riéndote)
 
-(Los vídeos de Luisón, Toto y Adrián, y la foto de Juan Carlos, ya están en la carpeta MATERIAL R17. Etiqueta a todos y pídeles por privado que lo compartan)`},
+Ya está. Ahora pon Simplemente Amándote y practica.
 
-{id:'sa-R18',rev:3,title:'R18 · Mié 2 dic · Última llamada',text:
-`(Suena un fragmento del estribillo)
+Guarda este vídeo para la cena de Navidad.
 
-Faltan 2 días.
+Y mándaselo a quien siempre dice que no sabe bailar.`},
 
-Si alguna vez te gustó un vídeo mío…
+{id:'dic-R26',rev:1,title:'R26 · Lun 14 dic · Esta semana cambia de color',text:
+`R26
 
-…este es el momento de ayudarme.
+Los del bolero, esto es para ustedes.
 
-Son 5 segundos.
+(Pausa: la portada pasa de naranja a rosa)
 
-Comenta AMOR.
+Hace un mes me pidieron la canción en las dos versiones.
 
-Te mando el enlace.
+El son ya salió.
 
-Le das al pre-save.
+Y esta semana… le toca al bolero.
 
-Y el viernes te llega sola.
+Lento. Con los ojos cerrados. Para dedicar.
 
-Compártelo con alguien que la vaya a escuchar.`},
+Comenta BOLERO y el día que salga te la mando el primero.`},
 
-{id:'sa-R19',rev:4,title:'R19 · Jue 3 dic · Mañana sale',text:
-`(Suenan 10 segundos del máster con tomas de estas semanas)
+{id:'dic-R28',rev:1,title:'R28 · Mié 16 dic · Me dijeron que el bolero está muerto',text:
+`R28
 
-Mañana sale.
+Me dijeron que grabar un bolero en 2026 era una locura.
 
-Ustedes me aconsejaron.
+Y lo grabé igual. Por tres razones.
 
-Ustedes votaron.
+Uno: porque ustedes me lo pidieron.
 
-Ustedes la esperaron.
+Dos: porque una canción de amor se entiende mejor despacio.
 
-Gracias.
+Tres: [tu razón: quién te enseñó el bolero o qué bolero te marcó].
 
-Si todavía no la guardaste…
+Y si el bolero está muerto… que me lo digan después de escucharlo.
 
-…comenta AMOR y te mando el enlace.`},
+Sale el viernes. Comenta BOLERO y te la mando.`},
 
-{id:'sa-R20',rev:3,title:'R20 · Vie 4 dic · Lanzamiento',text:
-`Ya está. Simplemente Amándote ya está en Spotify.
+{id:'dic-R35',rev:1,title:'R35 · Lun 28 dic · Día de los Inocentes',text:
+`R35
 
-(Cantas el coro con el máster de fondo; luego se montan tomas de la pareja bailando)
+Tengo que contarles algo.
+
+Después de este año… dejo la música.
+
+(Dos segundos de silencio, serio)
+
+¡Inocente!
+
+(Cantas el coro del son con ganas)
 
 Y te conviertes en {Bb}luz
 Cuando estás {C}conmigo
 Porque te abrigan mis ma{F}nos
 Conver{C/E}tidas en a{Dm}livio
 
-Y se derrama tu {Bb}voz
-Para llenar va{C}cíos
-Y me devuelves las ga{F}nas
-De {C/E}pensar en mi {Dm}delirio
-{Bb}amándote
-simplemente amán{C}dote
-{F}Te vivo
+En 2027 vienen más canciones que nunca.
 
+Sígueme en Spotify para no perderte ninguna.
 
-Ustedes eligieron cómo debía sonar esta canción.
+Comenta SON y te mando la última.`},
 
-Hoy es suya.
+{id:'dic-R21',rev:1,title:'R21 · Lun 7 dic · 3 días después',text:
+`R21
 
-Escúchala, guárdala en tu biblioteca y sube tu baile etiquetándome.
+Hace tres días saqué Simplemente Amándote. Te enseño lo que pasó, con números de verdad.
 
-Enlace en mi perfil.`}
+(Enseñas el móvil con Spotify for Artists)
 
+[Escuchas] escuchas en tres días.
+
+[Oyentes nuevos] personas que nunca me habían escuchado.
+
+Y [número] de ustedes me mandaron su baile.
+
+Para un artista independiente, sin discográfica, esto es muchísimo.
+
+Pero lo que de verdad la empuja en Spotify es una cosa: que la guardes.
+
+Si te gustó, guárdala en tu biblioteca.
+
+Comenta SON y te mando el enlace.`},
+
+{id:'dic-R23',rev:1,title:'R23 · Mié 9 dic · Mi primer Wrapped como artista',text:
+`R23
+
+Este es mi Wrapped como artista.
+
+(Enseñas la pantalla)
+
+Este año me escucharon [número] personas en [número] países.
+
+La canción más escuchada fue [canción].
+
+Y donde más me escuchan es [país o ciudad]. Eso no me lo esperaba.
+
+Es el primer año que canto mis propias canciones.
+
+Si tú eres una de esas [número] personas: gracias.
+
+Y si quieres salir en el del año que viene, sígueme en Spotify.
+
+Comenta AMOR y te mando el enlace.`},
+
+{id:'dic-R25',rev:1,title:'R25 · Vie 11 dic · Le pedí a la IA el videoclip',text:
+`R25
+
+No tenía con quién grabar esta escena… así que se la pedí a la inteligencia artificial.
+
+(Aparece el clip del R14)
+
+Soy músico independiente. No tengo productora, ni actores, ni presupuesto.
+
+Le di una foto mía, la canción, y le conté la historia.
+
+Y esto es lo que salió.
+
+(Clip de la pareja bailando del R16)
+
+¿Se nota que es IA?
+
+Dímelo en comentarios: sí o no.
+
+La canción sí es de verdad. Comenta SON y te la mando.`},
+
+{id:'dic-R31',rev:1,title:'R31 · Lun 21 dic · Yo no crecí con esta Navidad',text:
+`R31
+
+Yo no crecí con esta Navidad.
+
+En Cuba, para mí, diciembre era [lo que de verdad recuerdas de diciembre en Cuba].
+
+Llegué a Canarias con 21 años… y aquí descubrí la Nochebuena, el turrón, las uvas.
+
+Pero hay algo que es igual en todas partes: en estas fechas se extraña.
+
+A la familia que está lejos.
+
+Por eso escribí una canción de Navidad. Y no es para niños.
+
+Mañana te enseño un trozo. Sígueme para no perdértelo.`},
+
+{id:'dic-R32',rev:1,title:'R32 · Mar 22 dic · Una canción de Navidad que no es para niños',text:
+`R32
+
+Escribí una canción de Navidad que no es para niños.
+
+Es para los que este año tienen a la familia lejos.
+
+(Cantas la estrofa más fuerte con la guitarra)
+
+[Letra y acordes de tu canción de Navidad: mándamela y la pongo aquí y en el cancionero]
+
+Mándasela a alguien que extrañas.
+
+El 24 sale entera, con videoclip. Comenta FAMILIA y te la mando.`},
+
+{id:'dic-R33',rev:1,title:'R33 · Mié 23 dic · Antes de seguir viendo reels',text:
+`R33
+
+Antes de seguir viendo reels…
+
+llama a alguien que extrañas.
+
+No le escribas. Llámalo.
+
+(10 segundos en silencio mirando a cámara; suena tu canción de Navidad)
+
+Mañana te dejo la canción entera. Comenta FAMILIA.`},
+
+{id:'dic-R38',rev:1,title:'R38 · Jue 31 dic · 12 uvas, un deseo',text:
+`R38
+
+Esta noche, con cada uva, se pide un deseo.
+
+El mío es uno solo: que mis canciones lleguen a [tu meta] personas en 2027.
+
+(Te comes una uva mirando a cámara)
+
+Tú me puedes ayudar con algo de 5 segundos: sígueme en Spotify.
+
+Comenta AMOR y te mando el enlace.
+
+Feliz 2027.`},
+
+{id:'dic-R34',rev:1,title:'R34 · Jue 24 dic · Videoclip de Navidad (con IA)',text:
+`R34
+
+(Cantas la canción entera, con el audio de fondo)
+
+[Letra y acordes de tu canción de Navidad: mándamela y la pongo aquí y en el cancionero]`},
+
+{id:'dic-R36',rev:1,title:'R36 · Mar 29 dic · Mi 2026 en números',text:
+`R36
+
+Mi 2026 en números. Sin filtros.
+
+Canciones mías que saqué: [número].
+
+Personas que me escuchan al mes en Spotify: empecé el año con [oyentes en enero] y hoy son [oyentes hoy].
+
+Seguidores aquí: de [seguidores en enero] a [hoy].
+
+Y el número que más me importa: [mensajes o bailes que me mandaron].
+
+En 2027 quiero multiplicarlo todo por diez.
+
+Si me ayudas, sígueme en Spotify. Comenta AMOR y te mando el enlace.`}
   ]
 }
 ,{
